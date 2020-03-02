@@ -39,23 +39,28 @@ Voorzie een API endpoint om door middel van een POST request een dier toe te voe
 \subsection{Read (overview)}
 Voorzie een API endpoint om door middel van een GET request alle dieren (beperkt) te tonen. \textbf{LET OP: Dit zijn enkel jouw dieren} Voorbeeld output zou zijn:
 
-% TODO: deftige output conform met Phoenix standaarden
-    \begin{verbatim}
+\begin{verbatim}
 [
-    "1" : {"name" : "NAME", "dob" : "01/01/1994"},
-    "2" : {"name" : "NAME", "dob" : "01/01/1994"}
+    {
+        "id": 1,
+        "name": "snuffles"
+    },
+    {
+        "id": 2,
+        "name": "wuffles"
+    }
 ]
 \end{verbatim}
 
 \subsection{Read (animal details)}
 Voorzie een API endpoint om door middel van een GET request info over een specifiek dier op te vragen. Voorbeeld output zou zijn:
 
-% TODO: deftige output conform met Phoenix standaarden
 \begin{verbatim}
 {
-    "id" : 1,
-    "name" => "NAME", 
-    "dob" : "01/01/1994"
+    "id": 1,
+    "name": "snuffles",
+    "dob": "...",
+    "cat_or_dog": "hybrid"
 }
 \end{verbatim}
 
