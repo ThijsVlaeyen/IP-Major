@@ -85,7 +85,10 @@ Met uitzondering van de login pagina [\ref{subsect:login_pagina}] en de raw-api 
 
 \subsection{Login pagina} 
 \label{subsect:login_pagina}
-Zoals de naam als doet vermoeden is dit de pagina waar dat een gebruiker kan inloggen. Daarnaast kan een nieuwe gebruiker op deze pagina zijn account aanmaken. Zowel het inloggen als het aanmaken van een nieuwe account gebeurd op basis van een gebruikersnaam \& wachtwoord dat door de gebruiker zelf gekozen kan worden. Voor het opslaan van het wachtwoord mag Pbkdf2 gebruikt worden als hash algoritme. \\
+Zoals de naam als doet vermoeden is dit de pagina waar dat een gebruiker kan inloggen. Het inloggen gebeurd op basis van een gebruikersnaam \& wachtwoord. Door op de sign up knop te drukken word je doorverwezen naar een sign up pagina waardat niewe gebruikers zicht kunnen registreren. 
+
+\subsection{Sign up pagina}
+Op deze pagina kan een nieuwe gebruiker zichzelf registreren. Het aanmaken van een account kan door het geven van een gebruikersnaam en een wachtwoord. Controlleer ook zeken of dat de gebruikersnaam uniek is. Voor het opslaan van het wachtwoord mag Pbkdf2 gebruikt worden als hash algoritme. \\
 
 Authenticatie is d.m.v. JWT, dus geen sessions!
 
@@ -141,6 +144,13 @@ Op deze pagina kan een admin de gebruikersnaam \& wachtwoord van een gebruiker w
     \includegraphics{login_page}
     \caption{Login page}
     \label{fig:login page}
+\end{figure}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics{createUser}
+	\caption{Sign up page}
+	\label{fig:create user page}
 \end{figure}
 
 \begin{figure}[!h]
