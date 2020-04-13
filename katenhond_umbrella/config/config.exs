@@ -17,6 +17,10 @@ config :katenhond_web,
   ecto_repos: [Katenhond.Repo],
   generators: [context_app: :katenhond]
 
+config :katenhond_web, KatenhondWeb.Guardian,
+  issuer: "katenhond_web",
+  secret_key: "+7j8jItQIrTOEHR7hmbgtxzU3xs804hYjzfI4xOQZxeLXhw4EX+uKd8m1AH5HlsE"
+
 # Configures the endpoint
 config :katenhond_web, KatenhondWeb.Endpoint,
   url: [host: "localhost"],
