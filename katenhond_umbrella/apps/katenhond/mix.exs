@@ -38,7 +38,9 @@ defmodule Katenhond.MixProject do
     [
       {:ecto_sql, "~> 3.1"},
       {:myxql, ">= 0.0.0"},
-      {:jason, "~> 1.0"}
+      {:jason, "~> 1.0"},
+      {:pbkdf2_elixir, "~> 1.2.1"},
+      {:guardian, "~> 2.0"}
     ]
   end
 
