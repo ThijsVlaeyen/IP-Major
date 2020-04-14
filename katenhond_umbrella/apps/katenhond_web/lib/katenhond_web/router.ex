@@ -36,6 +36,8 @@ defmodule KatenhondWeb.Router do
     get "/login", SessionController, :new
     post "/login", SessionController, :login
     get "/logout", SessionController, :logout
+    get "/users/new", UserController, :new
+    post "/users", UserController, :create
   end
 
   scope "/", KatenhondWeb do

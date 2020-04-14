@@ -20,6 +20,7 @@ defmodule Katenhond.UserContext.User do
     |> validate_required([:username, :password, :role])
     |> validate_inclusion(:role, @acceptable_roles)
     |> put_password_hash()
+    |> unique_constraint(:username, name: :unique_users_index, message: "Username already taken")
   end
 
   defp put_password_hash(

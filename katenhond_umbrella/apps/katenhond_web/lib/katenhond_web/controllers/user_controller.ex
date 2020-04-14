@@ -23,24 +23,25 @@ defmodule KatenhondWeb.UserController do
         |> redirect(to: Routes.user_path(conn, :show, user))
 
       {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "new.html", changeset: changeset)
+        roles = UserContext.get_acceptable_roles()
+        render(conn, "new.html", changeset: changeset, acceptable_roles: roles)
     end
   end
 
   def show(conn, %{"id" => id}) do
-    user = UserContext.get_user!(id)
+    user = UserContext.get_user(id)
     render(conn, "show.html", user: user)
   end
 
   def edit(conn, %{"id" => id}) do
-    user = UserContext.get_user!(id)
+    user = UserContext.get_user(id)
     changeset = UserContext.change_user(user)
     roles = UserContext.get_acceptable_roles()
     render(conn, "edit.html", user: user, changeset: changeset, acceptable_roles: roles)
   end
 
   def update(conn, %{"id" => id, "user" => user_params}) do
-    user = UserContext.get_user!(id)
+    user = UserContext.get_user(id)
 
     case UserContext.update_user(user, user_params) do
       {:ok, user} ->
@@ -54,7 +55,7 @@ defmodule KatenhondWeb.UserController do
   end
 
   def delete(conn, %{"id" => id}) do
-    user = UserContext.get_user!(id)
+    user = UserContext.get_user(id)
     {:ok, _user} = UserContext.delete_user(user)
 
     conn

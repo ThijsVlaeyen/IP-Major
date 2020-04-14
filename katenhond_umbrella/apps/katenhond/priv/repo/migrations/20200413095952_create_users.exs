@@ -7,5 +7,7 @@ defmodule Katenhond.Repo.Migrations.CreateUsers do
       add :hashed_password, :string, null: false
       add :role, :string, null: false
     end
+
+    create unique_index(:users, [:username], name: :unique_users_index)
   end
 end
