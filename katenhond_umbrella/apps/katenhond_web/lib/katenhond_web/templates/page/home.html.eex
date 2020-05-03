@@ -1,0 +1,23 @@
+<h1>Home</h1>
+<section class="row">
+    <table id="table-animals">
+        <thead>
+            <tr>
+                <th><%= gettext "Pet" %></th>
+                <th><%= gettext "Name" %></th>
+                <th><%= gettext "Birthday" %></th>
+                <th><%= gettext "Owner" %></th>
+            </tr>
+        </thead>
+        <tbody>
+        <%= for animal <- @animals do%>
+            <tr>
+                <td><%= animal.cat_or_dog%></td>
+                <td><%= animal.name %></td>
+                <td><%= animal.born %></td>
+                <td><%= animal.user %></td>
+            </tr>
+        <% end %>
+        </tbody>
+    </table>
+</section>

@@ -12,18 +12,17 @@
     <header>
       <section class="container">
         <nav role="navigation">
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="<%= Routes.user_path(@conn, :index) %>">Users</a></li>
-          <li><a href="<%= Routes.session_path(@conn, :new) %>">Login</a></li>
-          <li><a href="<%= Routes.session_path(@conn, :logout) %>">Logout</a></li>
-          <li><a href="/user_scope">User scope</a></li>
-          <li><a href="/admin">Admin scope</a></li>
-        </ul>
+          <ul>
+            <%= if isloggedin(@conn) == true do %>
+              <li><a href="/home">Overview</a></li>
+              <li><a href="/profile">Profile</a></li>
+              <li><a href="<%= Routes.session_path(@conn, :logout) %>">Logout</a></li>
+              <%= if isadmin(@conn) == true do%>
+                <li><a href="">This boi is a admin</a></li>
+              <% end %>
+            <% end %>
+          </ul>
       </nav>
-        <a href="https://phoenixframework.org/" class="phx-logo">
-          <img src="<%= Routes.static_path(@conn, "/images/phoenix.png") %>" alt="Phoenix Framework Logo"/>
-        </a>
       </section>
     </header>
     <main role="main" class="container">

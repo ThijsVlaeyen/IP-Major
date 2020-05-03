@@ -29,6 +29,7 @@ defmodule KatenhondWeb.Router do
     plug KatenhondWeb.Plugs.AuthorizationPlug, ["Admin"]
   end
 
+  #Iedereen
   scope "/", KatenhondWeb do
     pipe_through [:browser, :auth]
 
@@ -40,20 +41,25 @@ defmodule KatenhondWeb.Router do
     post "/users", UserController, :create
   end
 
+  #User & Admin
   scope "/", KatenhondWeb do
     pipe_through [:browser, :auth, :ensure_auth, :allowed_for_users]
 
+    get "/home", PageController, :home
+
     get "/user_scope", PageController, :user_index
+
+    scope "/profile" do
+      get "/", ProfileController, :profile
+    end
   end
 
+  #Admin
   scope "/admin", KatenhondWeb do
     pipe_through [:browser, :auth, :ensure_auth, :allowed_for_admins]
 
     resources "/users", UserController
-    get "/", PageController, :admin_index
   end
-
-
 
   # Other scopes may use custom stacks.
   # scope "/api", KatenhondWeb do

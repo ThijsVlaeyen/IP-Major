@@ -1,12 +1,10 @@
 <section class="phx-hero">
-  <h1><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h1>
-  <p>A productive web framework that<br />does not compromise speed or maintainability.</p>
+  <h1>Welcome on the cat and dog tracking site!</h1>
+
+  <p>Please <a href="/login" class="link-button"><%= gettext "Login" %></a> or <a href="/users/new" class="link-button"><%= gettext "Signup" %></a>!</p>
+  
 </section>
 
 <section class="row">
-  this page is for: <%= @role %>
-  <br>
-  user accounts with password "t":
-  <br>
-  user - admin
+
 </section>

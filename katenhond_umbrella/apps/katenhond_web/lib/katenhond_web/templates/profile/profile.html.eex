@@ -1,0 +1,19 @@
+<h1>Profile</h1>
+<ul>
+
+  <li>
+    <strong>Username:</strong>
+    <%= @user.username %>
+  </li>
+
+  <li>
+    <strong>Hashed password:</strong>
+    <%= @user.hashed_password %>
+  </li>
+
+  <li>
+    <strong>Role:</strong>
+    <%= @user.role %>
+  </li>
+
+</ul>
