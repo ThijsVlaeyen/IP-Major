@@ -74,7 +74,7 @@ Voorzie een API endpoint om door middel van een PUT of PATCH request een dier up
 \subsection{Delete}
 Voorzie een API endpoint om door middel van een DELETE request een dier te verwijderen op basis van ID.
 
-\subsection{EXTRA}
+\subsection{API}
 Je kan enkel je eigen dieren beheren door middel van API keys. Bij het binnenkomen v.e. request, ga je nakijken of de meegegeven API key geldig is voor de gebruiker van wie je dieren wilt aanpassen/lezen.
 
 \section{Pagina's}
@@ -88,7 +88,7 @@ Met uitzondering van de login pagina [\ref{subsect:login_pagina}] en de raw-api 
 Zoals de naam als doet vermoeden is dit de pagina waar dat een gebruiker kan inloggen. Het inloggen gebeurd op basis van een gebruikersnaam \& wachtwoord. Door op de sign up knop te drukken word je doorverwezen naar een sign up pagina waardat niewe gebruikers zicht kunnen registreren. 
 
 \subsection{Sign up pagina}
-Op deze pagina kan een nieuwe gebruiker zichzelf registreren. Het aanmaken van een account kan door het geven van een gebruikersnaam en een wachtwoord. Controlleer ook zeken of dat de gebruikersnaam uniek is. Voor het opslaan van het wachtwoord mag Pbkdf2 gebruikt worden als hash algoritme. \\
+Op deze pagina kan een nieuwe gebruiker zichzelf registreren. Het aanmaken van een account kan door het geven van een gebruikersnaam een wachtwoord en dit wachtwoord te confirmeren via een extra textbox. Controlleer ook zeken of dat de gebruikersnaam uniek is. Voor het opslaan van het wachtwoord mag Pbkdf2 gebruikt worden als hash algoritme. \\
 
 Authenticatie is d.m.v. JWT, dus geen sessions!
 
@@ -133,6 +133,10 @@ Per opgelijste user, zie je de knoppen
 \subsubsection{Edit user page}
 Op deze pagina kan een admin de gebruikersnaam \& wachtwoord van een gebruiker wijzigen. Er is een save button en een cancel button om terug naar het overzicht te gaan.
 
+
+\section{Filmpje}
+Door de wijzigingen in zowel de manier van lesgeven als het examen verwachten wij dat iedereen een filmpje maakt waarin hij/zij kort even het project overloopt. Neem hier als voorbeeld het filmpje dat op Toledo te vinden is onder \textit{Assignments -$>$ project -$>$ ip-major-project-info.mp4}.
+Dit is ook de plaats waar we verwachten dat dit filmpje geupload zal worden voor de deadline van woensdag 20 mei 8u!
 
 
 \pagebreak
