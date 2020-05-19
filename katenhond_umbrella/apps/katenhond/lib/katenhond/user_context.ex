@@ -10,6 +10,12 @@ defmodule Katenhond.UserContext do
 
   defdelegate get_acceptable_roles(), to: User
 
+  # Load Animals for a specific user
+  def load_animals(%User{} = u), do: u |> Repo.preload([:animals])
+
+  # Load Keys for a specific user
+  def load_keys(%User{} = u), do: u |> Repo.preload([:keys])
+
   def authenticate_user(username, plain_text_password) do
     case Repo.get_by(User, username: username) do
       nil ->
@@ -22,6 +28,22 @@ defmodule Katenhond.UserContext do
         else
           {:error, :invalid_credentials}
         end
+    end
+  end
+
+    # Change username
+  def change_username(user,newusername) do
+    updated = Ecto.Changeset.change(user,username: newusername)
+    Repo.update(updated)
+  end
+
+  # Change password
+  def change_password(user,old_password,new_password) do
+    if Pbkdf2.verify_pass(old_password,user.hashed_password) do
+      updated = Ecto.Changeset.change(user,hashed_password: Pbkdf2.hash_pwd_salt(new_password))
+      Repo.update(updated)
+    else
+      {:error, :invalid_credentials}
     end
   end
 
@@ -52,6 +74,7 @@ defmodule Katenhond.UserContext do
       ** (Ecto.NoResultsError)
 
   """
+  def get_user!(id), do: Repo.get(User, id)
   def get_user(id), do: Repo.get(User, id)
 
   @doc """

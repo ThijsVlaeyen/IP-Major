@@ -1,0 +1,5 @@
+<h1>No Access</h1>
+<section class="column" style="margin-top: 2em;">
+    <img alt="Why are you hacking?" class="picture-center" src='<%= Routes.static_path(@conn, "/images/banner/noaccess.jpg") %>'>
+    <p>Stop! You have violated the Law! Pay the court a fine or serve your sentence. Your stolen goods are now forfeit</p>
+</section>

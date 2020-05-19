@@ -9,6 +9,9 @@ defmodule Katenhond.AnimalContext do
   alias Katenhond.AnimalContext.Animal
   alias Katenhond.UserContext.User
 
+  defdelegate get_acceptable_animals(), to: Animal
+  def load_animals(%User{} = u), do: u |> Repo.preload([:animals])
+
   @doc """
   Returns the list of animals.
 
@@ -36,7 +39,7 @@ defmodule Katenhond.AnimalContext do
       ** (Ecto.NoResultsError)
 
   """
-  def get_animal!(id), do: Repo.get!(Animal, id)
+  def get_animal!(id), do: Repo.get!(Animal, id) |> Repo.preload([:user])
 
   @doc """
   Creates a animal.
@@ -99,13 +102,9 @@ defmodule Katenhond.AnimalContext do
       %Ecto.Changeset{source: %Animal{}}
 
   """
-  def change_animal(%Animal{} = animal) do
-    Animal.changeset(animal, %{})
+  def change_animal(%Animal{} = animal, %User{} = user) do
+    Animal.changeset(animal, %{}, user)
   end
 
-  @doc """
-  Returns all animals for a specific user
-  """
-  def load_animals(%User{} = u), do: u |> Repo.preload([:animal])
 
 end

@@ -1,0 +1,31 @@
+<h1><%= gettext "Animal" %></h1>
+<h2><%= gettext "Change your animal" %></h2>
+<%= form_for @changeset, Routes.animal_path(@conn, :update), fn f -> %>
+    <%= if @changeset.action do %>
+        <div class="alert alert-danger">
+            <p><%= gettext "Oops, something went wrong! Please check the errors below." %></p>
+        </div>
+    <% end %>
+
+    <div class="form-group">
+        <%= label f, :name %>
+        <%= text_input f, :name %>
+        <%= error_tag f, :name %>
+    </div>
+
+    <div class="form-group">
+        <%= label f, :born %>
+        <%= date_input f, :born %>
+        <%= error_tag f, :born %>
+    </div>
+
+    <div class="form-group">
+        <%= label f, :cat_or_dog %>
+        <%= select f, :cat_or_dog, @acceptable_animals %>
+        <%= error_tag f, :cat_or_dog %>
+    </div>
+
+    <div>
+        <%= submit "Update animal" %>
+    </div>
+<% end %>

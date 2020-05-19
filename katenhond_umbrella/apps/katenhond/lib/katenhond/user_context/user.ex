@@ -3,6 +3,7 @@ defmodule Katenhond.UserContext.User do
   import Ecto.Changeset
 
   alias Katenhond.AnimalContext.Animal
+  alias Katenhond.KeyContext.Key
 
   @acceptable_roles ["Admin", "User"]
 
@@ -12,6 +13,7 @@ defmodule Katenhond.UserContext.User do
     field :hashed_password, :string
     field :role, :string, default: "User"
     has_many :animals, Animal
+    has_many :keys, Key
   end
 
   def get_acceptable_roles, do: @acceptable_roles

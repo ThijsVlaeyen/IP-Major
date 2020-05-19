@@ -1,0 +1,261 @@
+## "msgid"s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove "msgid"s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use "mix gettext.extract --merge" or "mix gettext.merge"
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: en\n"
+"Plural-Forms: nplurals=2\n"
+
+#, elixir-format
+#: lib/dogsandcats_web/templates/layout/app.html.eex:36
+#: lib/dogsandcats_web/templates/page/dashboard.html.eex:1
+msgid "Dashboard"
+msgstr ""
+
+#, elixir-format
+#: lib/dogsandcats_web/templates/layout/app.html.eex:7
+#: lib/dogsandcats_web/templates/layout/app.html.eex:31
+msgid "Dogs & Cats"
+msgstr ""
+
+#, elixir-format
+#: lib/dogsandcats_web/templates/page/index.html.eex:3
+#: lib/dogsandcats_web/templates/profile/profile.html.eex:4
+msgid "General"
+msgstr ""
+
+#, elixir-format
+#: lib/dogsandcats_web/templates/page/index.html.eex:18
+msgid "Info"
+msgstr ""
+
+#, elixir-format
+#: lib/dogsandcats_web/templates/page/index.html.eex:13
+msgid "Login"
+msgstr ""
+
+#, elixir-format
+#: lib/dogsandcats_web/templates/layout/app.html.eex:38
+msgid "Logout"
+msgstr ""
+
+#, elixir-format
+#: lib/dogsandcats_web/templates/layout/app.html.eex:40
+#: lib/dogsandcats_web/templates/user/edit.html.eex:1 lib/dogsandcats_web/templates/user/index.html.eex:1
+#: lib/dogsandcats_web/templates/user/new.html.eex:1 lib/dogsandcats_web/templates/user/show.html.eex:1
+msgid "Management"
+msgstr ""
+
+#, elixir-format
+#: lib/dogsandcats_web/templates/page/index.html.eex:9
+msgid "Please log in or sign up to use the application!"
+msgstr ""
+
+#, elixir-format
+#: lib/dogsandcats_web/templates/layout/app.html.eex:37
+#: lib/dogsandcats_web/templates/profile/editpassword.html.eex:1 lib/dogsandcats_web/templates/profile/editusername.html.eex:1
+#: lib/dogsandcats_web/templates/profile/profile.html.eex:1
+msgid "Profile"
+msgstr ""
+
+#, elixir-format
+#: lib/dogsandcats_web/templates/page/index.html.eex:14
+msgid "Signup"
+msgstr ""
+
+#, elixir-format
+#: lib/dogsandcats_web/templates/page/index.html.eex:5
+msgid "This application tracks your animals. Made by Vlaeyen Thijs"
+msgstr ""
+
+#, elixir-format
+#: lib/dogsandcats_web/templates/profile/profile.html.eex:52
+#: lib/dogsandcats_web/templates/user/index.html.eex:8
+msgid "Actions"
+msgstr ""
+
+#, elixir-format
+#: lib/dogsandcats_web/templates/page/dashboard.html.eex:10
+msgid "Birthday"
+msgstr ""
+
+#, elixir-format
+#: lib/dogsandcats_web/templates/profile/editpassword.html.eex:2
+#: lib/dogsandcats_web/templates/profile/profile.html.eex:28
+msgid "Change password"
+msgstr ""
+
+#, elixir-format
+#: lib/dogsandcats_web/templates/profile/editusername.html.eex:2
+#: lib/dogsandcats_web/templates/profile/profile.html.eex:25
+msgid "Change username"
+msgstr ""
+
+#, elixir-format
+#: lib/dogsandcats_web/templates/page/dashboard.html.eex:2
+msgid "Current time"
+msgstr ""
+
+#, elixir-format
+#: lib/dogsandcats_web/templates/page/dashboard.html.eex:2
+msgid "Add animal"
+msgstr ""
+
+#, elixir-format
+#: lib/dogsandcats_web/templates/profile/profile.html.eex:11
+#: lib/dogsandcats_web/templates/user/show.html.eex:13
+msgid "First name"
+msgstr ""
+
+#, elixir-format
+#: lib/dogsandcats_web/templates/user/index.html.eex:6
+msgid "Full Name"
+msgstr ""
+
+#, elixir-format
+#: lib/dogsandcats_web/templates/profile/profile.html.eex:15
+#: lib/dogsandcats_web/templates/user/show.html.eex:17
+msgid "Last name"
+msgstr ""
+
+#, elixir-format
+#: lib/dogsandcats_web/templates/page/dashboard.html.eex:9
+#: lib/dogsandcats_web/templates/profile/profile.html.eex:51
+msgid "Name"
+msgstr ""
+
+#, elixir-format
+#: lib/dogsandcats_web/templates/user/index.html.eex:35
+msgid "New User"
+msgstr ""
+
+#, elixir-format
+#: lib/dogsandcats_web/templates/profile/profile.html.eex:19
+#: lib/dogsandcats_web/templates/user/index.html.eex:7 lib/dogsandcats_web/templates/user/show.html.eex:21
+msgid "Role"
+msgstr ""
+
+#, elixir-format
+#: lib/dogsandcats_web/templates/profile/profile.html.eex:7
+#: lib/dogsandcats_web/templates/user/index.html.eex:5 lib/dogsandcats_web/templates/user/show.html.eex:9
+msgid "Username"
+msgstr ""
+
+#, elixir-format
+#: lib/dogsandcats_web/templates/profile/editpassword.html.eex:24
+#: lib/dogsandcats_web/templates/profile/editusername.html.eex:15
+msgid "Cancel"
+msgstr ""
+
+#, elixir-format
+#: lib/dogsandcats_web/templates/profile/editusername.html.eex:7
+msgid "Current username"
+msgstr ""
+
+#, elixir-format
+#: lib/dogsandcats_web/templates/user/show.html.eex:2
+msgid "Details"
+msgstr ""
+
+#, elixir-format
+#: lib/dogsandcats_web/templates/profile/profile.html.eex:23
+#: lib/dogsandcats_web/templates/user/edit.html.eex:2
+msgid "Edit"
+msgstr ""
+
+#, elixir-format
+#: lib/dogsandcats_web/templates/session/signup.html.eex:1
+msgid "Hello there! Please sign up!"
+msgstr ""
+
+#, elixir-format
+#: lib/dogsandcats_web/templates/user/new.html.eex:2
+msgid "New user"
+msgstr ""
+
+#, elixir-format
+#: lib/dogsandcats_web/templates/session/signup.html.eex:7
+#: lib/dogsandcats_web/templates/user/form.html.eex:4
+msgid "Oops, something went wrong! Please check the errors below."
+msgstr ""
+
+#, elixir-format
+#: lib/dogsandcats_web/templates/user/show.html.eex:25
+msgid "Password"
+msgstr ""
+
+#, elixir-format
+#: lib/dogsandcats_web/templates/session/new.html.eex:1
+msgid "Welcome back! Please log in!"
+msgstr ""
+
+#, elixir-format
+#: lib/dogsandcats_web/templates/session/signup.html.eex:46
+msgid "Already have an account? Please log in "
+msgstr ""
+
+#, elixir-format
+#: lib/dogsandcats_web/templates/session/new.html.eex:23
+msgid "Back"
+msgstr ""
+
+#, elixir-format
+#: lib/dogsandcats_web/templates/session/new.html.eex:21
+msgid "Don't have an account yet? Sign up"
+msgstr ""
+
+#, elixir-format
+#: lib/dogsandcats_web/templates/page/dashboard.html.eex:8
+msgid "Pet"
+msgstr ""
+
+#, elixir-format
+#: lib/dogsandcats_web/templates/session/new.html.eex:21
+#: lib/dogsandcats_web/templates/session/signup.html.eex:46
+msgid "here"
+msgstr ""
+
+#, elixir-format
+#: lib/dogsandcats_web/templates/profile/profile.html.eex:46
+msgid "Keys"
+msgstr ""
+
+#, elixir-format
+#: lib/dogsandcats_web/templates/session/signup.html.eex:47
+msgid "Only admins can add other admins!"
+msgstr ""
+
+#, elixir-format
+#: lib/dogsandcats_web/templates/profile/profile.html.eex:71
+msgid "Personal API Link"
+msgstr ""
+
+#, elixir-format
+#: lib/dogsandcats_web/templates/profile/profile.html.eex:69
+msgid "You don't have any API keys!"
+msgstr ""
+
+#, elixir-format
+#: lib/dogsandcats_web/templates/page/dashboard.html.eex:37
+msgid "You have not registered any animals yet!"
+msgstr ""
+
+#, elixir-format
+#: lib/dogsandcats_web/templates/page/index.html.eex:23
+msgid "Internetprogrammeren Major"
+msgstr ""
+
+#, elixir-format
+#: lib/dogsandcats_web/templates/page/index.html.eex:24
+msgid "Toegepaste Informatica"
+msgstr ""
+
+#, elixir-format
+#: lib/dogsandcats_web/templates/page/index.html.eex:25
+msgid "UC Leuven Limburg"
+msgstr ""

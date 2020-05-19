@@ -1,23 +1,30 @@
-<h1>Home</h1>
+<h1><%= gettext "Home" %></h1>
+<p style="margin-bottom: 0.5em;"><%= gettext "Current time" %>: <span id="clock" style="font-weight: bold;"></span></p>
 <section class="row">
-    <table id="table-animals">
-        <thead>
-            <tr>
-                <th><%= gettext "Pet" %></th>
-                <th><%= gettext "Name" %></th>
-                <th><%= gettext "Birthday" %></th>
-                <th><%= gettext "Owner" %></th>
-            </tr>
-        </thead>
-        <tbody>
-        <%= for animal <- @animals do%>
-            <tr>
-                <td><%= animal.cat_or_dog%></td>
-                <td><%= animal.name %></td>
-                <td><%= animal.born %></td>
-                <td><%= animal.user %></td>
-            </tr>
-        <% end %>
-        </tbody>
-    </table>
+    <%= if @animals != [] do %>
+        <table id="table-animals">
+            <thead>
+                <tr>
+                    <th><%= gettext "Pet" %></th>
+                    <th><%= gettext "Name" %></th>
+                    <th><%= gettext "Birthday" %></th>
+                </tr>
+            </thead>
+            <tbody>
+            <%= for animal <- @animals do%>
+                <tr>
+                    <td><%= animal.cat_or_dog %></td>
+                    <td><%= animal.name %></td>
+                    <td><%= animal.born %></td>
+                </tr>
+            <% end %>
+            </tbody>
+        </table>
+    <% else %>
+        <p><%= gettext "You have not registered any animals yet!" %></p>
+    <% end %>
 </section>
+<section class="row" style="margin-top: 2em;">
+    <img alt="Loooops" class="picture-center" src='<%= Routes.static_path(@conn, "/images/banner/looops.jpg") %>'>
+</section>
+<script type="text/javascript" src='<%= Routes.static_path(@conn, "/js/clock.js") %>'></script>

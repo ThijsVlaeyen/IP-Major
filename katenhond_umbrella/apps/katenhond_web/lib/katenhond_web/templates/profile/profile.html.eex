@@ -1,19 +1,61 @@
-<h1>Profile</h1>
-<ul>
-
-  <li>
-    <strong>Username:</strong>
-    <%= @user.username %>
-  </li>
-
-  <li>
-    <strong>Hashed password:</strong>
-    <%= @user.hashed_password %>
-  </li>
-
-  <li>
-    <strong>Role:</strong>
-    <%= @user.role %>
-  </li>
-
-</ul>
+<h1><%= gettext "Profile" %></h1>
+<article class="row">
+    <section class="column" style="margin-top: 2em;">
+        <p>Picture:</p>
+        <img alt="Doge" class="doge" src='<%= Routes.static_path(@conn, "/images/banner/profile.jpg") %>'>
+    </section>
+    <section id="general" class="column">
+        <h2><%= gettext "General" %></h2>
+        <p><b>Username:</b> <%= @user.username %></p>
+        <h3><%= gettext "Edit" %></h3>
+        <p>
+            <a href="/profile/edit/username" class="link-button"><%= gettext "Change username" %></a>
+        </p>
+        <p>
+            <a href="/profile/edit/password" class="link-button"><%= gettext "Change password" %></a>
+        </p>
+    </section>
+</article>
+    <section id="api" class="column">
+        <h2>API</h2>
+        <%= form_for @changeset, Routes.key_path(@conn, :new), fn f -> %>
+            <%= if @changeset.action do %>
+            <p>Oops, something went wrong! Please check the errors below.</p>
+            <% end %>
+            <p>
+                <%= label f, :name %>
+                <%= text_input f, :name %>
+                <%= error_tag f, :name %>
+            </p>
+            <p>
+                <%= submit "Generate" %>
+            </p>
+        <% end %>
+        <h3><%= gettext "Keys" %></h3>
+        <%= if @keys != [] do %>
+            <table>
+                <thead>
+                    <tr>
+                        <th><%= gettext "Name" %></th>
+                        <th><%= gettext "Actions" %></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%= for key <- @keys do%>
+                    <tr>
+                        <td><%= key.name %></td>
+                        <td>
+                            <%= link "Show", to: Routes.key_path(@conn, :show, key) %>
+                            | 
+                            <%= link( "Delete", to: Routes.key_path(@conn, :delete, key), method: :delete, data: [confirm: "Are you sure about that? ~ John Cena"]) %>
+                        </td>
+                    </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        <% else %>
+            <p><%= gettext "You don't have any API keys!" %></p>
+        <% end %>
+        <h3><%= gettext "Personal API Link" %></h3>
+        <p><a href="localhost:4000/api/users/<%= @user.id %>/animals">localhost:4000/api/users/<%= @user.id %>/animals</a></p>
+    </section>

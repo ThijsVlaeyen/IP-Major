@@ -1,4 +1,4 @@
-<h2>Login Page</h2>
+<h2><%= gettext "Welcome back! Please log in!" %></h2>
 
 <%= form_for @changeset, @action, fn f -> %>
 
@@ -15,9 +15,10 @@
 </div>
 
 <div class="form-group">
-    <%= submit "Submit", class: "btn btn-primary" %>
-</div>
-<div class="form-group">
-    <a href="/users/new">Sign up</a>
+    <%= submit "Log in", class: "btn btn-primary" %>
 </div>
 <% end %>
+<p><%= gettext "Don't have an account yet? Sign up" %> <a href='/signup'><%= gettext "here" %></a></p>
+<p>
+    <a href="/" class="link-button"><%= gettext "Back" %></a>
+</p>

@@ -1,10 +1,20 @@
-<section class="phx-hero">
-  <h1>Welcome on the cat and dog tracking site!</h1>
-
-  <p>Please <a href="/login" class="link-button"><%= gettext "Login" %></a> or <a href="/users/new" class="link-button"><%= gettext "Signup" %></a>!</p>
-  
-</section>
-
-<section class="row">
-
+<article class="row">
+    <section class="column">
+        <h2><%= gettext "General" %></h2>
+        <p>
+            <%= gettext "This application tracks your animals. Made by Vlaeyen Thijs" %>
+        </p>
+        <p>
+            <strong>
+                <%= gettext "Please log in or sign up to use the application!" %>
+            </strong>
+        </p>
+        <p>
+            <a href="/login" class="link-button"><%= gettext "Login" %></a>
+            <a href="/signup" class="link-button"><%= gettext "Signup" %></a>
+        </p>
+    </section>
+</article>
+<section class="row" style="margin-top: 2em;">
+    <img alt="This is a sad cat" class="picture-center" src='<%= Routes.static_path(@conn, "/images/banner/sad-cat.jpg") %>'>
 </section>

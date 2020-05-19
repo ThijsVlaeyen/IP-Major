@@ -1,0 +1,17 @@
+<h1><%= gettext "Profile" %></h1>
+<h2><%= gettext "Change username" %></h2>
+<%= form_for @changeset, Routes.profile_path(@conn, :changeusernamepost), fn f -> %>
+    <%= if @changeset.action do %>
+        <p>Oops, something went wrong! Please check the errors below.</p>
+    <% end %>
+    <p><b><%= gettext "Current username" %></b>: <%= @user.username %></p>
+    <p>
+        <%= label f, :username %>
+        <%= text_input f, :username %>
+        <%= error_tag f, :username %>
+    </p>
+    <p>
+        <%= submit "Save" %>
+        <a href="/profile" class="link-cancel"><%= gettext "Cancel" %></a>
+    </p>
+<% end %>

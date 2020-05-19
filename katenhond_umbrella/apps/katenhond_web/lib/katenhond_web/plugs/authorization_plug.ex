@@ -15,7 +15,7 @@ defmodule KatenhondWeb.Plugs.AuthorizationPlug do
     def grant_access(conn, false) do
       conn
       |> Controller.put_flash(:error, "Unauthorized access")
-      |> Controller.redirect(to: "/")
+      |> Controller.redirect(to: "/noaccess")
       |> halt
     end
   end

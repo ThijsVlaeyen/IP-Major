@@ -1,0 +1,142 @@
+#dogsandcats {
+    width: 100%;
+    font-weight: bold;
+    font-size: 2.5em;
+    font-family: 'Broadway';
+}
+
+.link-button {
+    background: #ffffff none repeat scroll 0 0;
+    border: 1px solid #0069d9;
+    color: #0069d9;
+    outline: medium none;
+    padding: 0.5em;
+    text-decoration: none;
+}
+
+.link-button:hover {
+    background-color: #0069d9;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.link-cancel {
+    margin-left: 1em;
+}
+
+.link-action {
+    font-weight: bold;
+}
+
+.link-action:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.picture-center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header{
+    display: grid;
+    grid-template-columns: 33% 34% 33%;
+    width: 100%;
+    background-color: lightgray;
+}
+
+.banner{
+    max-height: 10em;
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.doge{
+    width: auto;
+    max-height: 10em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.flex-link {
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+
+.language-link {
+    width: unset !important;
+    margin: 0.3em;
+}
+
+.language-image {
+    width: 2em;
+}
+
+.flex-link:first-child {
+    order:-1 !important;
+}
+
+
+/* Tabs at login page  (https://codepen.io/dhs/pen/diasg?editors=1100) */
+.tabs{
+    width: 100%;
+    margin: 4em;
+    position: relative;
+}
+
+.tabs .tab{
+    float: left;
+    display: block;
+}
+
+.tabs .tab>input[type="radio"] {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+
+.tabs .tab>label {
+    display: block;
+    padding: 6px 21px;
+    font-size: 12px;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+}
+
+.tabs .content {
+    z-index: 0;/* or display: none; */
+    overflow: hidden;
+    width: 600px;
+    padding: 25px;
+    position: absolute;
+    top: 27px;
+    left: 0;
+    
+    opacity:0;
+    transition: opacity 400ms ease-out;
+}
+
+.tabs>.tab>[id^="tab"]:checked + label {
+    top: 0;
+    background: #303030;
+    color: #F5F5F5;
+}
+
+.tabs>.tab>[id^="tab"]:checked ~ [id^="tab-content"] {
+    z-index: 1;/* or display: block; */
+   
+    opacity: 1;
+    transition: opacity 400ms ease-out;
+}

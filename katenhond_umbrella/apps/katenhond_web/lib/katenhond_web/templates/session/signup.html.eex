@@ -1,0 +1,41 @@
+<h2><%= gettext "Hello there! Please sign up!" %></h2>
+
+<%= form_for @changeset, @action, fn f -> %>
+
+<%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p><%= gettext "Oops, something went wrong! Please check the errors below." %></p>
+    </div>
+<% end %>
+
+<div class="form-group">
+  <%= label f, :username %>
+  <%= text_input f, :username %>
+  <%= error_tag f, :username %>
+</div>
+
+<div class="form-group">
+  <%= label f, :password %>
+  <%= password_input f, :password %>
+  <%= error_tag f, :password %>
+</div>
+
+<div class="form-group">
+  <%= label f, :confirmpassword %>
+  <%= password_input f, :confirmpassword %>
+  <%= error_tag f, :confirmpassword %>
+</div>
+
+<div class="form-group">
+  <%= label f, :role %>
+  <%= select f, :role, @acceptable_roles %>
+  <%= error_tag f, :role %>
+</div>
+
+<div>
+  <%= submit "Sign Up" %>
+</div>
+
+<% end %>
+<p><%= gettext "Already have an account? Please log in " %> <a href='/login'><%= gettext "here" %></a></p>
+<p><b><%= gettext "Only admins can add other admins!" %></b></p>

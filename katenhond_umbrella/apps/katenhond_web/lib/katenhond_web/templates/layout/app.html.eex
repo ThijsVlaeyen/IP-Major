@@ -4,32 +4,60 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title><%= assigns[:page_title] || "Auth · Phoenix Framework" %></title>
-    <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
+    <title><%= gettext "Cats & Dogs" %></title>
+    <link rel="stylesheet" href='<%= Routes.static_path(@conn, "/css/app.css") %>'/>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href='<%= Routes.static_path(@conn, "/css/customize.css") %>'/>
+    <link rel="shortcut icon" href='<%= Routes.static_path(@conn, "/images/favicon.ico") %>' type="image/x-icon">
+    <link rel="icon" href='<%= Routes.static_path(@conn, "/images/favicon.ico") %>' type="image/x-icon">
     <%= csrf_meta_tag() %>
   </head>
   <body>
+
+    <section>
+      <img class="banner" alt="Picture of bongocat" src='<%= Routes.static_path(@conn, "/images/banner/banner.jpeg") %>'>
+    </section>
     <header>
-      <section class="container">
-        <nav role="navigation">
-          <ul>
-            <%= if isloggedin(@conn) == true do %>
-              <li><a href="/home">Overview</a></li>
-              <li><a href="/profile">Profile</a></li>
-              <li><a href="<%= Routes.session_path(@conn, :logout) %>">Logout</a></li>
-              <%= if isadmin(@conn) == true do%>
-                <li><a href="">This boi is a admin</a></li>
-              <% end %>
+
+        <section class="container">
+            <div class="flex">
+              <a class="flex-link language-link" href="?locale=en">
+                English
+              </a>
+              <a class="flex-link language-link" href="?locale=nl">
+                Nederlands
+              </a>
+              <a class="flex-link language-link" href="?locale=fr">
+                Français
+              </a>
+            </div>
+        </section>
+
+        <section class="container" style="text-align: center;">
+          <h1 id="dogsandcats"><%= gettext "Dogs & Cats" %></h1>
+        </section>
+
+        <%= if isloggedin(@conn) == true do %>
+        <section class="container" style="margin-bottom: 1em;">
+          <nav class="flex">
+            <a class="flex-link" href="/dashboard"><%= gettext "Dashboard" %></a>
+            <a class="flex-link" href="/profile"><%= gettext "Profile" %></a>
+            <a class="flex-link" href="/logout"><%= gettext "Logout" %></a>
+            <%= if isadmin(@conn) == true do %>
+              <a class="flex-link" href="/management"><%= gettext "Management" %></a>
             <% end %>
-          </ul>
-      </nav>
-      </section>
+          </nav>
+        </section>
+        <% end %>
     </header>
+
     <main role="main" class="container">
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
       <%= render @view_module, @view_template, assigns %>
     </main>
-    <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
+    <script type="text/javascript" src='<%= Routes.static_path(@conn, "/js/app.js") %>'></script>
+    <script type="text/javascript" src='<%= Routes.static_path(@conn, "/js/phoenix.js") %>'></script>
+    <script type="text/javascript" src='<%= Routes.static_path(@conn, "/js/phoenix_html.js") %>'></script>
   </body>
 </html>

@@ -2,7 +2,8 @@ defmodule KatenhondWeb.LayoutView do
   use KatenhondWeb, :view
 
   alias KatenhondWeb.Guardian
-  alias KatenhondWeb.Endpoint
+
+  defp getUser(conn), do: Guardian.Plug.current_resource(conn);
 
   def isloggedin(conn) do
     user = Guardian.Plug.current_resource(conn);
