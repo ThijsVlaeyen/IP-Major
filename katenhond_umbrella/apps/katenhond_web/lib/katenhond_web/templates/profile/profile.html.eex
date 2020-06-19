@@ -28,6 +28,11 @@
                 <%= error_tag f, :name %>
             </p>
             <p>
+                <%= label f, :is_writeable, "Does this key have write permissions"%>
+                <%= checkbox f, :is_writeable %>
+                <%= error_tag f, :is_writeable%>
+            </p>
+            <p>
                 <%= submit "Generate" %>
             </p>
         <% end %>

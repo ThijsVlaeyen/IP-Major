@@ -34,6 +34,14 @@ defmodule KatenhondWeb.Router do
     plug KatenhondWeb.Plugs.AuthorizationPlug, ["Admin"]
   end
 
+  #API CHECK
+  pipeline :read do
+    plug KatenhondWeb.Plugs.PermissionPlug, [true, false]
+  end
+
+  pipeline :readwrite do
+    plug KatenhondWeb.Plugs.PermissionPlug, [true]
+  end
 
   # Everyone
   scope "/", KatenhondWeb do
@@ -71,7 +79,6 @@ defmodule KatenhondWeb.Router do
 
   end
 
-
   # Admin pages
   scope "/", KatenhondWeb do
     pipe_through [:browser, :auth, :ensure_auth, :allowed_for_admins]
@@ -82,14 +89,29 @@ defmodule KatenhondWeb.Router do
   end
 
   # API
+  #READ
   scope "/api", KatenhondWeb do
-    pipe_through :api
+    pipe_through [:api, :read]
 
     # Animals for Users
     resources "/users", UserController, only: [] do
-      resources "/animals", AnimalController
+      get "/animals/show", AnimalController, :index
     end
 
    end
+
+   scope "/api", KatenhondWeb do
+    pipe_through [:api, :readwrite]
+
+    # Animals for Users
+    resources "/users", UserController, only: [] do
+      post "/animals/new", AnimalController, :create
+      put "/animals/update", AnimalController, :update
+      delete "/animals/delete", AnimalController, :delete
+    end
+
+   end
+
+   #WRITE
 
 end

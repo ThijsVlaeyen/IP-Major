@@ -9,9 +9,9 @@ defmodule KatenhondWeb.KeyController do
     defp getUser(conn), do: Guardian.Plug.current_resource(conn);
 
     # Nieuwe API key
-    def new(conn,%{"key" => %{"name" => name}}) do
+    def new(conn,%{"key" => %{"name" => name, "is_writeable" => permission}}) do
         user = getUser(conn)
-        case KeyContext.create_key(name,user) do
+        case KeyContext.create_key(name, permission, user) do
           {:ok, key} ->
             conn
             |> put_flash(:info, "Key #{key.name} succesfully generated!")
