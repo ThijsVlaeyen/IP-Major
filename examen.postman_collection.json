@@ -1,0 +1,141 @@
+{
+	"info": {
+		"_postman_id": "cdf9ce3f-3bdc-48d6-94ac-bac1401d6346",
+		"name": "examen",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "show animals",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "new animal with permission",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "VfVzLvCzLKGS0gVu8ApV7PXQu942i5X6",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "x-api-key",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "animal[name]",
+							"value": "Summer",
+							"type": "text"
+						},
+						{
+							"key": "animal[born]",
+							"value": "2020-03-20",
+							"type": "text"
+						},
+						{
+							"key": "animal[cat_or_dog]",
+							"value": "Cat",
+							"type": "text"
+						}
+					],
+					"options": {
+						"formdata": {}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/api/users/2/animals/new",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"users",
+						"2",
+						"animals",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "new animal no permission",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "CBr9xQhzXiawO3kyYBXD7wILRM9JVjHv",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "x-api-key",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "animal[name]",
+							"value": "Summer",
+							"type": "text"
+						},
+						{
+							"key": "animal[born]",
+							"value": "2020-03-20",
+							"type": "text"
+						},
+						{
+							"key": "animal[cat_or_dog]",
+							"value": "Cat",
+							"type": "text"
+						}
+					],
+					"options": {
+						"formdata": {}
+					}
+				},
+				"url": {
+					"raw": "localhost:4000/api/users/2/animals/new",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"users",
+						"2",
+						"animals",
+						"new"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
