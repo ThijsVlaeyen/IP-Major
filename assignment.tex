@@ -17,15 +17,20 @@
 
 \section{Inleiding}
 \begin{itemize}
-    \item Deadline: \textbf{\date{Woensdag 20 mei 2020, 08u00 CEST}}. 
+    \item Deadline: \textbf{\date{Maandag 10 Augustus 2020, 08u00 CEST}}.
     \item Je werkt individueel aan de volledige opgave.
     \item Er wordt gebruik gemaakt van een github classroom. Accepteer hiervoor de link op Toledo.
-    
+
     \item Tijdens het examen zul je een extra functionaliteit moeten toevoegen aan je applicatie, zorg er dus voor dat je applicatie eenvoudig uitgebreid kan worden en dat je perfect weet hoe je applicatie werkt. Dit komt bovendien ook van pas tijdens de mondelinge verdediging.
     \item Dit project telt voor 30\% mee voor je uiteindelijke score van dit vak. Deze 30\% geldt enkel voor het project, de uitbereiding die tijdens het examen wordt toegevoegd is onderdeel van de 70\% van het examen.
-    \item Omdat het project een onderdeel is voor de evaluatie van dit vak, is het examenreglement hierop van toepassing. Schrijf dus je eigen oplossing! Wanneer je hulp krijgt of geeft aan een mede-student, zorg er dan voor dat het altijd over algemeen advies gaat en deel geen code. Vermeld ook altijd je bron. Dit geldt zowel voor contact in persoon maar ook voor advies via online forums. 
+    \item Omdat het project een onderdeel is voor de evaluatie van dit vak, is het examenreglement hierop van toepassing. Schrijf dus je eigen oplossing! Wanneer je hulp krijgt of geeft aan een mede-student, zorg er dan voor dat het altijd over algemeen advies gaat en deel geen code. Vermeld ook altijd je bron. Dit geldt zowel voor contact in persoon maar ook voor advies via online forums.
     \item Heb je problemen met je project kun je altijd naar het monitoraat komen. Daarnaast is het ook mogelijk om je vraag op het Toledo forum te plaatsen. Mails met vragen zullen onbeantwoord blijven.
 \end{itemize}{}
+
+\section{Inleveren}
+zie extension.pdf
+
+
 \section{Opgave}
 De opgave is om een applicatie te ontwikkelen waar dat gebruikers informatie kunnen bijhouden welke honden en katten ze zijn tegen gekomen. We willen onthouden wat de naam van het dier was, weten of het een kat of een hond is, wanneer het is geboren en wie dat het baasje is. Daarnaast willen we dat een third party application gebruik kan maken van onze API om  een overzicht te krijgen welke honden en katten we zijn tegengekomen, nieuwe honden en katten kan toevoegen, reeds gekende honden en katten kan wijzigen en zelfs kan verwijderen. Bovendien moet er een onderscheid gemaakt worden tussen een standaard gebruiker die zich aanmeld en een admin. Een admin moet naast de functionaliteiten die een standaard gebruiker heeft, een extra functionaliteit hebben om gebruikers te verwijderen en om het wachtwoord van een gebruiker aan te passen. Tot slot wordt er verwacht dat er tests geschreven worden. De tests mogen beperkt blijven tot de API werking.
 
@@ -83,13 +88,13 @@ Om de opgave tot een goed einde te brengen is het nodig om verschillende pagina'
 \subsection{Header}
 Met uitzondering van de login pagina [\ref{subsect:login_pagina}] en de raw-api [\ref{subsect:raw_api}] pagina wordt er verwacht dat iedere volgende pagina gebruik maakt van eenzelfde header. Deze header wordt gebruikt door de gebruiker om zichzelf te kunnen navigeren tussen de verschillende paginas. Meer concreet moet de header de volgende functionaliteiten bevatten: Veranderen van taal (minstens 2 verschillende talen), uitloggen uit de applicatie,  navigeren naar de show profile [\ref{subsect:show_profile}] pagina en terug navigeren naar de home pagina [\ref{subsect:home_page}]. Voor een admin gebruiker moet het ook mogelijk zijn om naar de user management pagina [\ref{subsect: user management}] te gaan.
 
-\subsection{Login pagina} 
+\subsection{Login pagina}
 \label{subsect:login_pagina}
 Zoals de naam als doet vermoeden is dit de pagina waar dat een gebruiker kan inloggen. Daarnaast kan een nieuwe gebruiker op deze pagina zijn account aanmaken. Zowel het inloggen als het aanmaken van een nieuwe account gebeurd op basis van een gebruikersnaam \& wachtwoord dat door de gebruiker zelf gekozen kan worden. Voor het opslaan van het wachtwoord mag Pbkdf2 gebruikt worden als hash algoritme. \\
 
 Authenticatie is d.m.v. JWT, dus geen sessions!
 
-\subsection{Dashboard} 
+\subsection{Dashboard}
 \label{subsect:home_page}
 Het dashboard is de pagina waar dat de gebruik op terecht zal komen nadat deze zichzelf heeft aangemeld. Hier wordt een overzicht gegeven van al de honden en katten van de gebruiker. Daarnaast moet de gebruiker door middel van javascript kunnen zien hoe laat het op dit moment is. \\
 
@@ -120,7 +125,7 @@ Deze pagina bevat geen layout, het enige wat er op deze pagina zichtbaar moet zi
 \label{subsect: user management}
 Deze pagina is alleen beschikbaar als een admin zich heeft aangemeld. Er wordt een overzicht gegevens van al de gebruikers. Om het eenvoudig te houden is het de admin zelf die een nieuw wachtwoord voor een gebruiker kiest. \\
 
-Per opgelijste user, zie je de knoppen 
+Per opgelijste user, zie je de knoppen
 \begin{itemize}
     \item Edit
     \item Delete
