@@ -14,8 +14,9 @@ msgstr ""
 msgid "can't be blank"
 msgstr "ne peut pas être vide"
 
-msgid "Username already taken"
-msgstr "a déjà été pris"
+## From Ecto.Changeset.unique_constraint/3
+msgid "has already been taken"
+msgstr ""
 
 msgid "is invalid"
 msgstr "est invalide"

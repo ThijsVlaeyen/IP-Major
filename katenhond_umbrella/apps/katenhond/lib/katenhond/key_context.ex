@@ -14,6 +14,10 @@ defmodule Katenhond.KeyContext do
     key.permission
   end
 
+  def get_by_api(api) do
+    Repo.get_by(Key, value: to_string(api))
+  end
+
   def load_keys(%User{} = u) do
      u |> Repo.preload([:keys])
   end

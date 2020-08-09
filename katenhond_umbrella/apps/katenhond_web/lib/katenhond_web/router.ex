@@ -95,7 +95,8 @@ defmodule KatenhondWeb.Router do
 
     # Animals for Users
     resources "/users", UserController, only: [] do
-      get "/animals/show", AnimalController, :index
+      get "/animals", AnimalController, :index
+      get "/animals/:id", AnimalController, :show
     end
 
    end
@@ -106,12 +107,10 @@ defmodule KatenhondWeb.Router do
     # Animals for Users
     resources "/users", UserController, only: [] do
       post "/animals/new", AnimalController, :create
-      put "/animals/update", AnimalController, :update
-      delete "/animals/delete", AnimalController, :delete
+      put "/animals/:id", AnimalController, :update
+      delete "/animals/:id", AnimalController, :delete
     end
 
    end
-
-   #WRITE
 
 end

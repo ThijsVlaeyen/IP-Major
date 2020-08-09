@@ -5,7 +5,8 @@ defmodule KatenhondWeb.SessionController do
     alias Katenhond.UserContext
     alias Katenhond.UserContext.User
 
-    # Login
+    # LOGIN
+    # ==========
     def newlogin(conn, _) do
       changeset = UserContext.change_user(%User{})
       maybe_user = Guardian.Plug.current_resource(conn)
@@ -18,8 +19,17 @@ defmodule KatenhondWeb.SessionController do
     end
     
     def login(conn, %{"user" => %{"username" => username, "password" => password}}) do
-      UserContext.authenticate_user(username, password)
-      |> login_reply(conn)
+      case UserContext.authenticate_user(username, password) do
+        {:ok, user} ->
+          conn
+          |> put_flash(:info, gettext("Welcome!"))
+          |> Guardian.Plug.sign_in(user)
+          |> redirect(to: "/dashboard")
+        {:error, :invalid_credentials} ->
+          conn
+          |> put_flash(:error, gettext("Invalid credentials"))
+          |> newlogin(%{})
+      end
     end
     
     def logout(conn, _) do
@@ -27,20 +37,9 @@ defmodule KatenhondWeb.SessionController do
       |> Guardian.Plug.sign_out()
       |> redirect(to: "/")
     end
-    
-    defp login_reply({:ok, user}, conn) do
-      conn
-      |> put_flash(:info, "Welcome #{user.username}!")
-      |> Guardian.Plug.sign_in(user)
-      |> redirect(to: "/dashboard")
-    end
-    
-    defp login_reply({:error, reason}, conn) do
-      conn
-      |> put_flash(:error, to_string(reason))
-      |> newlogin(%{})
-    end
 
+    # CREATING NEW USER
+    # ==========
     def newsignup(conn,_) do
       maybe_user = Guardian.Plug.current_resource(conn)
       if maybe_user do
@@ -54,15 +53,20 @@ defmodule KatenhondWeb.SessionController do
       end
     end
 
-    def signup(conn, %{"user" => user_params}) do
-      case UserContext.create_user(user_params) do
-        {:ok, _user} ->
+    def signup(conn, %{"user" => %{"username" => username, "password" => password, "confirmpassword" => confirmpassword}}) do
+      case UserContext.create_user(username, password, confirmpassword, "User") do
+        {:ok, _t} ->
           conn
-          |> put_flash(:info, "Signed up successfully! Now please login!")
+          |> put_flash(:info, gettext("Signed up successfully! Now please login!"))
           |> redirect(to: "/login")
-        {:error, %Ecto.Changeset{} = changeset} ->
-          roles = getRolesForSignup()
-          render(conn, "signup.html", changeset: changeset, acceptable_roles: roles, action: Routes.session_path(conn, :signup))
+        {:error, :passwords_do_not_match} ->
+          conn
+          |> put_flash(:error, gettext("Passwords do not match"))
+          |> newsignup(%{})
+        {:error, _t} ->
+          conn
+          |> put_flash(:error, gettext("Username already taken"))
+          |> newsignup(%{})
       end
     end
 

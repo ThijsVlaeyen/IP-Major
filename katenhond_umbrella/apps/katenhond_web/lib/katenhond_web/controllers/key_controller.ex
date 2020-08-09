@@ -32,7 +32,7 @@ defmodule KatenhondWeb.KeyController do
                 |> render("key.json", key: key)
             false ->
                 conn
-                |> redirect(to: "/noaccess")
+                |> put_flash(:error, "No access")
         end
     end
   
@@ -44,16 +44,16 @@ defmodule KatenhondWeb.KeyController do
                 case KeyContext.delete_key(key) do
                     {:ok, _key} ->
                         conn
-                        |> put_flash(:info, "Key #{key.name} succesfully Deleted!")
+                        |> put_flash(:info, "Succesfully Deleted!")
                         |> redirect(to: "/profile")
-                    {:error, %Ecto.Changeset{} = _changeset} ->
+                    _ ->
                         conn
-                        |> put_flash(:error, "Key #{key.name} failed to delete!")
+                        |> put_flash(:error, "Failed to delete!")
                         |> redirect(to: "/profile")
                 end
             false ->
                 conn
-                |> redirect(to: "/noaccess")
+                |> put_flash(:error, "No access")
         end
         
     end

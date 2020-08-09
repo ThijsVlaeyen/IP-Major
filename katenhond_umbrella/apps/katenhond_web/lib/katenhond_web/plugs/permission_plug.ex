@@ -7,22 +7,13 @@ defmodule KatenhondWeb.Plugs.PermissionPlug do
   
     def init(options), do: options
   
-    def call(conn, options) do
+    def call(conn, permission) do
       api_key = get_req_header(conn, "x-api-key")
-      keys = KeyContext.list_keys()
-      key = false
-
-      key = for x <- keys do
-        key = if String.equivalent?(x.value, api_key) do
-          x.permission
-        else
-          key
-        end
-      end
+      
+      key = KeyContext.get_by_api(api_key)
 
       conn
-      |> grant_access(key in options)
-      
+      |> grant_access(key != nil && key.permission in permission)
     end
   
     def grant_access(conn, true), do: conn

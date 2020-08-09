@@ -2,6 +2,7 @@ defmodule KatenhondWeb.Plugs.AuthorizationPlug do
     import Plug.Conn
     alias Katenhond.UserContext.User
     alias Phoenix.Controller
+    use KatenhondWeb, :controller
   
     def init(options), do: options
   
@@ -14,7 +15,7 @@ defmodule KatenhondWeb.Plugs.AuthorizationPlug do
   
     def grant_access(conn, false) do
       conn
-      |> Controller.put_flash(:error, "Unauthorized access")
+      |> Controller.put_flash(:error, gettext("Unauthorized access"))
       |> Controller.redirect(to: "/noaccess")
       |> halt
     end
