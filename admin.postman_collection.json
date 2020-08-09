@@ -8,10 +8,35 @@
 		{
 			"name": "get all animals",
 			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "6X7JqrzO8uVfaxvz8RQDS/TbXDZJUzYI",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "x-api-key",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": ""
+					"raw": "localhost:4000/api/users/1/animals",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"users",
+						"1",
+						"animals"
+					]
 				}
 			},
 			"response": []
@@ -19,18 +44,53 @@
 		{
 			"name": "new animal",
 			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "T6nmaF7QE2PJoG6E32Q6wPyRKdbZz6Fd",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "x-api-key",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "animal[name]",
+							"value": "Summer",
+							"type": "text"
+						},
+						{
+							"key": "animal[born]",
+							"value": "2020-03-20",
+							"type": "text"
+						},
+						{
+							"key": "animal[cat_or_dog]",
+							"value": "Cat",
+							"type": "text"
+						}
+					]
+				},
 				"url": {
-					"raw": "localhost:4000/api/user/7/animals",
+					"raw": "localhost:4000/api/users/2/animals",
 					"host": [
 						"localhost"
 					],
 					"port": "4000",
 					"path": [
 						"api",
-						"user",
-						"7",
+						"users",
+						"2",
 						"animals"
 					]
 				}
@@ -40,10 +100,56 @@
 		{
 			"name": "update animal details",
 			"request": {
-				"method": "GET",
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "T6nmaF7QE2PJoG6E32Q6wPyRKdbZz6Fd",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "x-api-key",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
 				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "animal[name]",
+							"value": "Summa",
+							"type": "text"
+						},
+						{
+							"key": "animal[born]",
+							"value": "2020-12-24",
+							"type": "text"
+						},
+						{
+							"key": "animal[cat_or_dog]",
+							"value": "Dog",
+							"type": "text"
+						}
+					]
+				},
 				"url": {
-					"raw": ""
+					"raw": "localhost:4000/api/users/2/animals/4",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"users",
+						"2",
+						"animals",
+						"4"
+					]
 				}
 			},
 			"response": []
@@ -56,12 +162,12 @@
 					"apikey": [
 						{
 							"key": "value",
-							"value": "B1UHcBkVRzgQeGsnEDZkIS5yBA5sPzQYR6o2LS0pH-FrqTTGvKicYuyS",
+							"value": "T6nmaF7QE2PJoG6E32Q6wPyRKdbZz6Fd",
 							"type": "string"
 						},
 						{
 							"key": "key",
-							"value": "_csrf_token",
+							"value": "x-api-key",
 							"type": "string"
 						}
 					]
@@ -69,7 +175,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "localhost:4000/api/users/7/animals/30",
+					"raw": "localhost:4000/api/users/2/animals/4",
 					"host": [
 						"localhost"
 					],
@@ -77,9 +183,9 @@
 					"path": [
 						"api",
 						"users",
-						"7",
+						"2",
 						"animals",
-						"30"
+						"4"
 					]
 				}
 			},
@@ -88,10 +194,36 @@
 		{
 			"name": "show animal details",
 			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "T6nmaF7QE2PJoG6E32Q6wPyRKdbZz6Fd",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "x-api-key",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": ""
+					"raw": "localhost:4000/api/users/2/animals/4",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"users",
+						"2",
+						"animals",
+						"4"
+					]
 				}
 			},
 			"response": []
