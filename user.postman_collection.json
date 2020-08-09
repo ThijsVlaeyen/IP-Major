@@ -8,10 +8,25 @@
 		{
 			"name": "get all animals of user read",
 			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "w5JgVWx8pqV77EGp1AuTsN0iKjbpHtzE",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "x-api-key",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:4000/api/users/7/animals",
+					"raw": "localhost:4000/api/users/1/animals",
 					"host": [
 						"localhost"
 					],
@@ -19,7 +34,7 @@
 					"path": [
 						"api",
 						"users",
-						"7",
+						"1",
 						"animals"
 					]
 				}
@@ -29,10 +44,25 @@
 		{
 			"name": "get all animals of user readwrite",
 			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "z1cIiLVwK+a9MaS7IGs0Zx+wR+xrJitI",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "x-api-key",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:4000/api/users/7/animals",
+					"raw": "localhost:4000/api/users/1/animals",
 					"host": [
 						"localhost"
 					],
@@ -40,7 +70,7 @@
 					"path": [
 						"api",
 						"users",
-						"7",
+						"1",
 						"animals"
 					]
 				}
@@ -50,10 +80,25 @@
 		{
 			"name": "get all animals of user wrong api-key",
 			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "dsfsdfqsfsqdfqsfdsqf",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "x-api-key",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:4000/api/users/7/animals",
+					"raw": "localhost:4000/api/users/1/animals",
 					"host": [
 						"localhost"
 					],
@@ -61,7 +106,7 @@
 					"path": [
 						"api",
 						"users",
-						"7",
+						"1",
 						"animals"
 					]
 				}
@@ -71,10 +116,13 @@
 		{
 			"name": "get all animals of user no api-key",
 			"request": {
+				"auth": {
+					"type": "noauth"
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:4000/api/users/7/animals",
+					"raw": "localhost:4000/api/users/1/animals",
 					"host": [
 						"localhost"
 					],
@@ -82,7 +130,7 @@
 					"path": [
 						"api",
 						"users",
-						"7",
+						"1",
 						"animals"
 					]
 				}
@@ -92,18 +140,53 @@
 		{
 			"name": "new animal read",
 			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "w5JgVWx8pqV77EGp1AuTsN0iKjbpHtzE",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "x-api-key",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "animal[name]",
+							"value": "Snuffles2",
+							"type": "text"
+						},
+						{
+							"key": "animal[born]",
+							"value": "2002-01-04",
+							"type": "text"
+						},
+						{
+							"key": "animal[cat_or_dog]",
+							"value": "Dog",
+							"type": "text"
+						}
+					]
+				},
 				"url": {
-					"raw": "localhost:4000/api/user/7/animals",
+					"raw": "localhost:4000/api/users/1/animals",
 					"host": [
 						"localhost"
 					],
 					"port": "4000",
 					"path": [
 						"api",
-						"user",
-						"7",
+						"users",
+						"1",
 						"animals"
 					]
 				}
@@ -113,18 +196,53 @@
 		{
 			"name": "new animal readwrite",
 			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "z1cIiLVwK+a9MaS7IGs0Zx+wR+xrJitI",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "x-api-key",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "animal[name]",
+							"value": "Snuffles2",
+							"type": "text"
+						},
+						{
+							"key": "animal[born]",
+							"value": "2002-01-04",
+							"type": "text"
+						},
+						{
+							"key": "animal[cat_or_dog]",
+							"value": "Dog",
+							"type": "text"
+						}
+					]
+				},
 				"url": {
-					"raw": "localhost:4000/api/user/7/animals",
+					"raw": "localhost:4000/api/users/1/animals",
 					"host": [
 						"localhost"
 					],
 					"port": "4000",
 					"path": [
 						"api",
-						"user",
-						"7",
+						"users",
+						"1",
 						"animals"
 					]
 				}
@@ -172,7 +290,7 @@
 					]
 				},
 				"url": {
-					"raw": "localhost:4000/api/users/1/animals/7",
+					"raw": "localhost:4000/api/users/1/animals/5",
 					"host": [
 						"localhost"
 					],
@@ -182,7 +300,7 @@
 						"users",
 						"1",
 						"animals",
-						"7"
+						"5"
 					]
 				}
 			},
@@ -196,7 +314,7 @@
 					"apikey": [
 						{
 							"key": "value",
-							"value": "w5JgVWx8pqV77EGp1AuTsN0iKjbpHtzE",
+							"value": "z1cIiLVwK+a9MaS7IGs0Zx+wR+xrJitI",
 							"type": "string"
 						},
 						{
@@ -229,7 +347,7 @@
 					]
 				},
 				"url": {
-					"raw": "localhost:4000/api/users/1/animals/7",
+					"raw": "localhost:4000/api/users/1/animals/5",
 					"host": [
 						"localhost"
 					],
@@ -239,7 +357,7 @@
 						"users",
 						"1",
 						"animals",
-						"7"
+						"5"
 					]
 				}
 			},
@@ -253,12 +371,12 @@
 					"apikey": [
 						{
 							"key": "value",
-							"value": "B1UHcBkVRzgQeGsnEDZkIS5yBA5sPzQYR6o2LS0pH-FrqTTGvKicYuyS",
+							"value": "w5JgVWx8pqV77EGp1AuTsN0iKjbpHtzE",
 							"type": "string"
 						},
 						{
 							"key": "key",
-							"value": "_csrf_token",
+							"value": "x-api-key",
 							"type": "string"
 						}
 					]
@@ -266,7 +384,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "localhost:4000/api/users/7/animals/30",
+					"raw": "localhost:4000/api/users/1/animals/3",
 					"host": [
 						"localhost"
 					],
@@ -274,9 +392,9 @@
 					"path": [
 						"api",
 						"users",
-						"7",
+						"1",
 						"animals",
-						"30"
+						"3"
 					]
 				}
 			},
@@ -290,12 +408,12 @@
 					"apikey": [
 						{
 							"key": "value",
-							"value": "B1UHcBkVRzgQeGsnEDZkIS5yBA5sPzQYR6o2LS0pH-FrqTTGvKicYuyS",
+							"value": "z1cIiLVwK+a9MaS7IGs0Zx+wR+xrJitI",
 							"type": "string"
 						},
 						{
 							"key": "key",
-							"value": "_csrf_token",
+							"value": "x-api-key",
 							"type": "string"
 						}
 					]
@@ -303,7 +421,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "localhost:4000/api/users/7/animals/30",
+					"raw": "localhost:4000/api/users/1/animals/2",
 					"host": [
 						"localhost"
 					],
@@ -311,9 +429,9 @@
 					"path": [
 						"api",
 						"users",
-						"7",
+						"1",
 						"animals",
-						"30"
+						"2"
 					]
 				}
 			},
@@ -322,10 +440,36 @@
 		{
 			"name": "show animal details",
 			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "w5JgVWx8pqV77EGp1AuTsN0iKjbpHtzE",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "x-api-key",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": ""
+					"raw": "localhost:4000/api/users/1/animals/4",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"users",
+						"1",
+						"animals",
+						"4"
+					]
 				}
 			},
 			"response": []
