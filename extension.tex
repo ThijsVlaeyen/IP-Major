@@ -1,0 +1,109 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{IP Major opdracht 19-20}
+\author{Tom Eversdijk \& Wannes Fransen}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+\graphicspath{ {./img/} }
+
+\usepackage{url}
+\usepackage{float}
+\usepackage{hyperref}
+
+\begin{document}
+\maketitle
+
+\section{Inleiding}
+\begin{itemize}
+    \item Deadline: \textbf{\date{Maandag 10 Augustus 2020, 08u00 CEST}}.
+    \item Je werkt individueel aan de volledige opgave.
+    \item Er wordt gebruik gemaakt van een github classroom. Accepteer hiervoor de link op Toledo.
+
+    \item Tijdens het examen zul je een extra functionaliteit moeten toevoegen aan je applicatie, zorg er dus voor dat je applicatie eenvoudig uitgebreid kan worden en dat je perfect weet hoe je applicatie werkt. Dit komt bovendien ook van pas tijdens de mondelinge verdediging.
+    \item Dit project telt voor 30\% mee voor je uiteindelijke score van dit vak. Deze 30\% geldt enkel voor het project, de uitbereiding die tijdens het examen wordt toegevoegd is onderdeel van de 70\% van het examen.
+    \item Omdat het project een onderdeel is voor de evaluatie van dit vak, is het examenreglement hierop van toepassing. Schrijf dus je eigen oplossing! Wanneer je hulp krijgt of geeft aan een mede-student, zorg er dan voor dat het altijd over algemeen advies gaat en deel geen code. Vermeld ook altijd je bron. Dit geldt zowel voor contact in persoon maar ook voor advies via online forums.
+    \item Heb je problemen met je project kun je altijd naar het monitoraat komen. Daarnaast is het ook mogelijk om je vraag op het Toledo forum te plaatsen. Mails met vragen zullen onbeantwoord blijven.
+\end{itemize}{}
+\section{Opgave}
+
+
+
+Voor het project heb je een applicatie ontworpen waardat een gebruiker API keys kan aanmaken. De aangemaakte API keys kunnen vervolgens worden uitgedeeld aan derde gebruikers, waardoor deze derde gebruikers het recht krijgen om CRUD operaties uit te voeren op de dieren van de API key eigenaar.
+\\ \\
+Voor deze opdracht moeten jullie je applicatie zo aanpassen dat de API key eigenaar verschillende rechten kan toekennen aan iedere API key. Meer specifiek wordt er een onderscheid gemaakt tussen API keys met enkel lees rechten en API keys met lees- \& schrijfrechten.
+\section{Een voorbeeld}
+Alice maakt 2 verschillende API-keys. Ze geeft haar eerste API Key aan Bob en haar 2de API key aan Carol. Ze wilt echter dat Bob enkel haar dieren kan zien, niet kan aanpassen. Daarom geeft ze de API-key van Bob enkel \textbf{leesrechten}. Carol daarentegen mag wel de dieren van Alice aanpassen, Carol krijgt dus een API-key met \textbf{lees- \& schrijfrechten}.
+
+\section{Enkele tips}
+\begin{enumerate}
+    \item Deze rechten mag je extreem simpel implementeren. (Boolean isWriteable)
+    \item Autorisatie logica staat niet in je controller, maar in de logica folder. Je mag dus wel de autorisatie code oproepen vanuit je controller, maar niet defini\"eren.
+    \item Je kunt in een plug makkelijk waardes opslaan, zie voorbeeldcode hieronder.
+\end{enumerate}
+
+\subsection{Voorbeeldcode:}
+
+Plug waardes opslaan
+\begin{verbatim}
+    a. plug.ex
+        assign(conn, key, value)
+    b. controller.ex
+        conn.assigns.key
+\end{verbatim}
+
+Checkbox in form in template
+\begin{verbatim}
+ <%= label f, :is_writeable, "Does this key have write permissions?" %>
+ <%= checkbox f, :is_writeable %>
+ <%= error_tag f, :is_writeable %>
+\end{verbatim}
+
+
+
+
+
+
+
+% #################################
+
+\newpage
+
+\section{Inleveren}
+\begin{itemize}
+    \item Op de Github repository van je project
+    \item Onder de branch "master"
+    \item Je voorziet ook een Postman export voor alle operaties (list animals / show animal / create animal / update animal / delete animal)
+    \item Bij het examen hebben we jullie de kans gegeven om de export later nog eens opnieuw te pushen. Dit is nu niet meer het geval. Let goed op dat wanneer je je code inlevert, de export correct is en de juiste waarden bevat! (geen foute URL's. ID's passen we zelf aan. API key de "key value" moet correct zijn, de waarde van de key wijzigen we natuurlijk.)
+    \item Net zoals bij de 1ste zit, moet je een filmpje voorzien waar je alle aspecten van je applicatie toont. De maximum termijn van dit filmpje mag 8 minuten zijn. De upload instructies staan ook op toledo aangezien je daar je filmpje + link naar je repository moet inleveren.
+\end{itemize}
+
+\subsection{Info postman export}
+\begin{verbatim}
+    1. Maak een nieuwe collectie
+
+    2. Maak een nieuwe request aan (met de nodige informatie)
+
+    3. Naast de "send" knop, staat er "save as". Kies dan de juiste collectie.
+
+    4. Dubbelcheck al je requests. 
+        (sluit deze, open deze opnieuw en voer ze nog eens uit)
+
+    5. In de linker balk van je postman venster staan je collecties. 
+        Rechts van de collectie is een "..." icoon. Wanneer je hierop klikt, 
+        verschijnt er een dropdown waar je "export" kan kiezen.
+
+    6. push deze .json file mee op je github repository als 
+        "examen_postman_export.json".
+\end{verbatim}
+
+
+
+
+
+
+
+
+
+\end{document}
