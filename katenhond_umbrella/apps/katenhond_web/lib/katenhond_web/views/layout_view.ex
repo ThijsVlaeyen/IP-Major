@@ -3,7 +3,7 @@ defmodule KatenhondWeb.LayoutView do
 
   alias KatenhondWeb.Guardian
 
-  defp getUser(conn), do: Guardian.Plug.current_resource(conn);
+  #defp getUser(conn), do: Guardian.Plug.current_resource(conn);
 
   def isloggedin(conn) do
     user = Guardian.Plug.current_resource(conn);

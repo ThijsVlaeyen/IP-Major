@@ -5,7 +5,8 @@ defmodule Katenhond.Repo.Migrations.CreateKeys do
     create table(:keys) do
       add :name, :string, null: false
       add :value, :string
-      add :user_id, references(:users, on_delete: :nothing), null: false
+      add :permission, :boolean
+      add :user_id, references(:users, on_delete: :delete_all), null: false
     end
 
     create index(:keys, [:user_id])

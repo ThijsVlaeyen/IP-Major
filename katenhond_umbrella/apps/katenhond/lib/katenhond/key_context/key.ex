@@ -7,6 +7,7 @@ defmodule Katenhond.KeyContext.Key do
   schema "keys" do
     field :name, :string
     field :value, :string
+    field :permission, :boolean, default: false
     belongs_to :user, User
   end
 
@@ -20,8 +21,8 @@ defmodule Katenhond.KeyContext.Key do
   @doc false
   def create_changeset(key, attrs, user) do
     key
-    |> cast(attrs, [:name, :value])
-    |> validate_required([:name, :value])
+    |> cast(attrs, [:name, :value, :permission])
+    |> validate_required([:name, :value, :permission])
     |> put_assoc(:user, user)
   end
 end

@@ -1,21 +1,25 @@
-defmodule KatenhondWeb.Plugs.AuthorizationPlug do
+defmodule KatenhondWeb.Plugs.PermissionPlug do
     import Plug.Conn
+    alias Katenhond.KeyContext
+    alias Katenhond.KeyContext.Key
     alias Katenhond.UserContext.User
     alias Phoenix.Controller
-    use KatenhondWeb, :controller
   
     def init(options), do: options
   
-    def call(%{private: %{guardian_default_resource: %User{} = u}} = conn, roles) do
+    def call(conn, permission) do
+      api_key = get_req_header(conn, "x-api-key")
+      
+      key = KeyContext.get_by_api(api_key)
+
       conn
-      |> grant_access(u.role in roles)
+      |> grant_access(key != nil && key.permission in permission)
     end
   
     def grant_access(conn, true), do: conn
   
     def grant_access(conn, false) do
       conn
-      |> Controller.put_flash(:error, gettext("Unauthorized access"))
       |> Controller.redirect(to: "/noaccess")
       |> halt
     end

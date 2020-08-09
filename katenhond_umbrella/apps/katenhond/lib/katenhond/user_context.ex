@@ -38,13 +38,48 @@ defmodule Katenhond.UserContext do
   end
 
   # Change password
-  def change_password(user,old_password,new_password) do
-    if Pbkdf2.verify_pass(old_password,user.hashed_password) do
-      updated = Ecto.Changeset.change(user,hashed_password: Pbkdf2.hash_pwd_salt(new_password))
-      Repo.update(updated)
+  def change_password(user, old_password, new_password, confirmpassword) do
+  IO.inspect new_password
+  IO.inspect confirmpassword
+    if new_password == confirmpassword do
+      if Pbkdf2.verify_pass(old_password,user.hashed_password) do
+        updated = Ecto.Changeset.change(user,hashed_password: Pbkdf2.hash_pwd_salt(new_password))
+        Repo.update(updated)
+      else
+        {:error, :invalid_credentials}
+      end
     else
-      {:error, :invalid_credentials}
+      {:error, :non_matching}
     end
+    
+  end
+
+  @doc """
+  Creates a user.
+
+  ## Examples
+
+      iex> create_user(%{field: value})
+      {:ok, %User{}}
+
+      iex> create_user(%{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def create_user(username, password, confirmpassword, role) do
+    if password == confirmpassword do
+      %User{}
+      |> User.changeset(%{"username" => username, "password" => password, "role" => role})
+      |> Repo.insert()
+    else
+      {:error, :passwords_do_not_match}
+    end
+  end
+
+  def create_seed(attrs \\ %{}) do
+    %User{}
+    |> User.changeset(attrs)
+    |> Repo.insert()
   end
 
   @doc """
@@ -76,24 +111,6 @@ defmodule Katenhond.UserContext do
   """
   def get_user!(id), do: Repo.get(User, id)
   def get_user(id), do: Repo.get(User, id)
-
-  @doc """
-  Creates a user.
-
-  ## Examples
-
-      iex> create_user(%{field: value})
-      {:ok, %User{}}
-
-      iex> create_user(%{field: bad_value})
-      {:error, %Ecto.Changeset{}}
-
-  """
-  def create_user(attrs \\ %{}) do
-    %User{}
-    |> User.changeset(attrs)
-    |> Repo.insert()
-  end
 
   @doc """
   Updates a user.

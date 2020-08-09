@@ -12,250 +12,292 @@ msgstr ""
 "Plural-Forms: nplurals=2\n"
 
 #, elixir-format
-#: lib/dogsandcats_web/templates/layout/app.html.eex:36
-#: lib/dogsandcats_web/templates/page/dashboard.html.eex:1
+#: lib/katenhond_web/templates/layout/app.html.eex:43
 msgid "Dashboard"
 msgstr "Dashboard"
 
 #, elixir-format
-#: lib/dogsandcats_web/templates/layout/app.html.eex:7
-#: lib/dogsandcats_web/templates/layout/app.html.eex:31
+#: lib/katenhond_web/templates/layout/app.html.eex:37
 msgid "Dogs & Cats"
 msgstr "Chiens & Chats"
 
 #, elixir-format
-#: lib/dogsandcats_web/templates/page/index.html.eex:3
-#: lib/dogsandcats_web/templates/profile/profile.html.eex:4
+#: lib/katenhond_web/templates/page/index.html.eex:3
+#: lib/katenhond_web/templates/profile/profile.html.eex:8
 msgid "General"
 msgstr "Général"
 
 #, elixir-format
-#: lib/dogsandcats_web/templates/page/index.html.eex:18
-msgid "Info"
-msgstr "Information"
-
-#, elixir-format
-#: lib/dogsandcats_web/templates/page/index.html.eex:13
+#: lib/katenhond_web/templates/page/index.html.eex:13
 msgid "Login"
 msgstr "S'identifier"
 
 #, elixir-format
-#: lib/dogsandcats_web/templates/layout/app.html.eex:38
+#: lib/katenhond_web/templates/layout/app.html.eex:45
 msgid "Logout"
 msgstr "Se déconnecter"
 
 #, elixir-format
-#: lib/dogsandcats_web/templates/layout/app.html.eex:40
-#: lib/dogsandcats_web/templates/user/edit.html.eex:1 lib/dogsandcats_web/templates/user/index.html.eex:1
-#: lib/dogsandcats_web/templates/user/new.html.eex:1 lib/dogsandcats_web/templates/user/show.html.eex:1
+#: lib/katenhond_web/templates/layout/app.html.eex:47
+#: lib/katenhond_web/templates/user/edit.html.eex:1 lib/katenhond_web/templates/user/index.html.eex:1
+#: lib/katenhond_web/templates/user/new.html.eex:1 lib/katenhond_web/templates/user/show.html.eex:1
 msgid "Management"
 msgstr "Gestion"
 
 #, elixir-format
-#: lib/dogsandcats_web/templates/page/index.html.eex:9
+#: lib/katenhond_web/templates/page/index.html.eex:9
 msgid "Please log in or sign up to use the application!"
 msgstr "Veuillez vous connecter ou vous inscrire pour utiliser l'application!"
 
 #, elixir-format
-#: lib/dogsandcats_web/templates/layout/app.html.eex:37
-#: lib/dogsandcats_web/templates/profile/editpassword.html.eex:1 lib/dogsandcats_web/templates/profile/editusername.html.eex:1
-#: lib/dogsandcats_web/templates/profile/profile.html.eex:1
+#: lib/katenhond_web/templates/layout/app.html.eex:44
+#: lib/katenhond_web/templates/profile/editpassword.html.eex:1 lib/katenhond_web/templates/profile/editusername.html.eex:1
+#: lib/katenhond_web/templates/profile/profile.html.eex:1
 msgid "Profile"
 msgstr "Profil"
 
 #, elixir-format
-#: lib/dogsandcats_web/templates/page/index.html.eex:14
+#: lib/katenhond_web/templates/page/index.html.eex:14
 msgid "Signup"
 msgstr "S'inscrire"
 
 #, elixir-format
-#: lib/dogsandcats_web/templates/page/index.html.eex:5
-msgid "This application tracks your animals. Made by Vlaeyen Thijs"
-msgstr "Cette application permet de suivre vos animaux. Réalisé par Vlaeyen Thijs"
-
-#, elixir-format
-#: lib/dogsandcats_web/templates/profile/profile.html.eex:52
-#: lib/dogsandcats_web/templates/user/index.html.eex:8
+#: lib/katenhond_web/templates/profile/profile.html.eex:45
+#: lib/katenhond_web/templates/user/index.html.eex:7
 msgid "Actions"
 msgstr "Actions"
 
 #, elixir-format
-#: lib/dogsandcats_web/templates/page/dashboard.html.eex:10
+#: lib/katenhond_web/templates/page/home.html.eex:10
 msgid "Birthday"
 msgstr "Anniversaire"
 
 #, elixir-format
-#: lib/dogsandcats_web/templates/profile/editpassword.html.eex:2
-#: lib/dogsandcats_web/templates/profile/profile.html.eex:28
+#: lib/katenhond_web/templates/profile/editpassword.html.eex:2
+#: lib/katenhond_web/templates/profile/profile.html.eex:15
 msgid "Change password"
 msgstr "Changer le mot de passe"
 
 #, elixir-format
-#: lib/dogsandcats_web/templates/profile/editusername.html.eex:2
-#: lib/dogsandcats_web/templates/profile/profile.html.eex:25
+#: lib/katenhond_web/templates/profile/editusername.html.eex:2
+#: lib/katenhond_web/templates/profile/profile.html.eex:12
 msgid "Change username"
 msgstr "Changer le nom d'utilisateur"
 
 #, elixir-format
-#: lib/dogsandcats_web/templates/page/dashboard.html.eex:2
+#: lib/katenhond_web/templates/page/home.html.eex:2
 msgid "Current time"
 msgstr "Heure actuelle"
 
 #, elixir-format
-#: lib/dogsandcats_web/templates/page/dashboard.html.eex:2
-msgid "Add animal"
-msgstr "Ajouter un animal"
-
-#, elixir-format
-#: lib/dogsandcats_web/templates/profile/profile.html.eex:11
-#: lib/dogsandcats_web/templates/user/show.html.eex:13
-msgid "First name"
-msgstr "Prénom"
-
-#, elixir-format
-#: lib/dogsandcats_web/templates/user/index.html.eex:6
-msgid "Full Name"
-msgstr "Nom complet"
-
-#, elixir-format
-#: lib/dogsandcats_web/templates/profile/profile.html.eex:15
-#: lib/dogsandcats_web/templates/user/show.html.eex:17
-msgid "Last name"
-msgstr "Nom de famille"
-
-#, elixir-format
-#: lib/dogsandcats_web/templates/page/dashboard.html.eex:9
-#: lib/dogsandcats_web/templates/profile/profile.html.eex:51
+#: lib/katenhond_web/templates/page/home.html.eex:9
+#: lib/katenhond_web/templates/profile/profile.html.eex:44
 msgid "Name"
 msgstr "Nom"
 
 #, elixir-format
-#: lib/dogsandcats_web/templates/user/index.html.eex:35
+#: lib/katenhond_web/templates/user/index.html.eex:26
 msgid "New User"
 msgstr "Nouvel utilisateur"
 
 #, elixir-format
-#: lib/dogsandcats_web/templates/profile/profile.html.eex:19
-#: lib/dogsandcats_web/templates/user/index.html.eex:7 lib/dogsandcats_web/templates/user/show.html.eex:21
+#: lib/katenhond_web/templates/user/index.html.eex:6
+#: lib/katenhond_web/templates/user/show.html.eex:13
 msgid "Role"
 msgstr "Rôle"
 
 #, elixir-format
-#: lib/dogsandcats_web/templates/profile/profile.html.eex:7
-#: lib/dogsandcats_web/templates/user/index.html.eex:5 lib/dogsandcats_web/templates/user/show.html.eex:9
+#: lib/katenhond_web/templates/user/index.html.eex:5
+#: lib/katenhond_web/templates/user/show.html.eex:9
 msgid "Username"
 msgstr "Nom d'utilisateur"
 
 #, elixir-format
-#: lib/dogsandcats_web/templates/profile/editpassword.html.eex:24
-#: lib/dogsandcats_web/templates/profile/editusername.html.eex:15
+#: lib/katenhond_web/templates/profile/editpassword.html.eex:24
+#: lib/katenhond_web/templates/profile/editusername.html.eex:15
 msgid "Cancel"
 msgstr "Annuler"
 
 #, elixir-format
-#: lib/dogsandcats_web/templates/profile/editusername.html.eex:7
+#: lib/katenhond_web/templates/profile/editusername.html.eex:7
 msgid "Current username"
 msgstr "Nom d'utilisateur actuel"
 
 #, elixir-format
-#: lib/dogsandcats_web/templates/user/show.html.eex:2
+#: lib/katenhond_web/templates/user/show.html.eex:2
 msgid "Details"
 msgstr "Détails"
 
 #, elixir-format
-#: lib/dogsandcats_web/templates/profile/profile.html.eex:23
-#: lib/dogsandcats_web/templates/user/edit.html.eex:2
+#: lib/katenhond_web/templates/profile/profile.html.eex:10
+#: lib/katenhond_web/templates/user/edit.html.eex:2
 msgid "Edit"
 msgstr "Éditer"
 
 #, elixir-format
-#: lib/dogsandcats_web/templates/session/signup.html.eex:1
+#: lib/katenhond_web/templates/session/signup.html.eex:1
 msgid "Hello there! Please sign up!"
 msgstr "Bonjour! Inscrivez vous s'il vous plait!"
 
 #, elixir-format
-#: lib/dogsandcats_web/templates/user/new.html.eex:2
+#: lib/katenhond_web/templates/user/new.html.eex:2
 msgid "New user"
 msgstr "Nouvel utilisateur"
 
 #, elixir-format
-#: lib/dogsandcats_web/templates/session/signup.html.eex:7
-#: lib/dogsandcats_web/templates/user/form.html.eex:4
+#: lib/katenhond_web/templates/animal/editAnimal.html.eex:6
+#: lib/katenhond_web/templates/animal/new.html.eex:7 lib/katenhond_web/templates/session/signup.html.eex:7
+#: lib/katenhond_web/templates/user/form.html.eex:4
 msgid "Oops, something went wrong! Please check the errors below."
 msgstr "Oups, quelque chose s'est mal passé! Veuillez vérifier les erreurs ci-dessous."
 
 #, elixir-format
-#: lib/dogsandcats_web/templates/user/show.html.eex:25
+#: lib/katenhond_web/templates/user/show.html.eex:17
 msgid "Password"
 msgstr "Mot de passe"
 
 #, elixir-format
-#: lib/dogsandcats_web/templates/session/new.html.eex:1
+#: lib/katenhond_web/templates/session/login.html.eex:1
 msgid "Welcome back! Please log in!"
 msgstr "Nous saluons le retour! Veuillez vous connecter!"
 
 #, elixir-format
-#: lib/dogsandcats_web/templates/session/signup.html.eex:46
+#: lib/katenhond_web/templates/session/signup.html.eex:40
 msgid "Already have an account? Please log in "
 msgstr "Vous avez déjà un compte? Veuillez vous connecter!"
 
 #, elixir-format
-#: lib/dogsandcats_web/templates/session/new.html.eex:23
+#: lib/katenhond_web/templates/session/login.html.eex:23
 msgid "Back"
 msgstr "Retour"
 
 #, elixir-format
-#: lib/dogsandcats_web/templates/session/new.html.eex:21
+#: lib/katenhond_web/templates/session/login.html.eex:21
 msgid "Don't have an account yet? Sign up"
 msgstr "Vous n'avez pas encore de compte? Inscrivez-vous <a href='/signup'>ici</a>!"
 
 #, elixir-format
-#: lib/dogsandcats_web/templates/page/dashboard.html.eex:8
+#: lib/katenhond_web/templates/page/home.html.eex:8
 msgid "Pet"
 msgstr "Animal de compagnie"
 
 #, elixir-format
-#: lib/dogsandcats_web/templates/session/new.html.eex:21
-#: lib/dogsandcats_web/templates/session/signup.html.eex:46
+#: lib/katenhond_web/templates/session/login.html.eex:21
+#: lib/katenhond_web/templates/session/signup.html.eex:40
 msgid "here"
 msgstr "ici"
 
 #, elixir-format
-#: lib/dogsandcats_web/templates/profile/profile.html.eex:46
+#: lib/katenhond_web/templates/profile/profile.html.eex:39
 msgid "Keys"
 msgstr "Clés"
 
 #, elixir-format
-#: lib/dogsandcats_web/templates/session/signup.html.eex:47
+#: lib/katenhond_web/templates/session/signup.html.eex:41
 msgid "Only admins can add other admins!"
 msgstr "Seuls les administrateurs peuvent ajouter d'autres administrateurs!"
 
 #, elixir-format
-#: lib/dogsandcats_web/templates/profile/profile.html.eex:71
+#: lib/katenhond_web/templates/profile/profile.html.eex:64
 msgid "Personal API Link"
 msgstr "Lien API personnel"
 
 #, elixir-format
-#: lib/dogsandcats_web/templates/profile/profile.html.eex:69
+#: lib/katenhond_web/templates/profile/profile.html.eex:62
 msgid "You don't have any API keys!"
 msgstr "Vous n'avez pas de clés API!"
 
 #, elixir-format
-#: lib/dogsandcats_web/templates/page/dashboard.html.eex:37
+#: lib/katenhond_web/templates/page/home.html.eex:24
 msgid "You have not registered any animals yet!"
 msgstr "Vous n'avez encore enregistré aucun animal!"
 
 #, elixir-format
-#: lib/dogsandcats_web/templates/page/index.html.eex:23
-msgid "Internetprogrammeren Major"
-msgstr "Programmation Internet Majeure"
+#: lib/katenhond_web/templates/animal/new.html.eex:1
+msgid "Add your animal here!"
+msgstr "Ajouter un animal"
 
 #, elixir-format
-#: lib/dogsandcats_web/templates/page/index.html.eex:24
-msgid "Toegepaste Informatica"
-msgstr "Informatique appliquée"
+#: lib/katenhond_web/templates/animal/editAnimal.html.eex:1
+msgid "Animal"
+msgstr "Ajouter un animal"
 
 #, elixir-format
-#: lib/dogsandcats_web/templates/page/index.html.eex:25
-msgid "UC Leuven Limburg"
-msgstr "UC Louvain Limburg"
+#: lib/katenhond_web/templates/layout/app.html.eex:7
+msgid "Cats & Dogs"
+msgstr ""
+
+#, elixir-format
+#: lib/katenhond_web/templates/animal/editAnimal.html.eex:2
+msgid "Change your animal"
+msgstr ""
+
+#, elixir-format
+#: lib/katenhond_web/templates/page/home.html.eex:1
+msgid "Home"
+msgstr ""
+
+#, elixir-format
+#: lib/katenhond_web/templates/page/index.html.eex:5
+msgid "This application tracks your animals. Made by Vlaeyen Thijs"
+msgstr "Cette application permet de suivre vos animaux. Réalisé par Vlaeyen Thijs"
+
+#, elixir-format
+#: lib/katenhond_web/plugs/authorization_plug.ex:18
+#: lib/katenhond_web/plugs/authorization_plug.ex:18
+msgid "Unauthorized access"
+msgstr "Pas d'accès"
+
+#, elixir-format
+#: lib/katenhond_web/templates/page/noaccess.html.eex:1
+msgid "No access"
+msgstr "Pas d'accès"
+
+#, elixir-format
+#: lib/katenhond_web/controllers/profile_controller.ex:60
+#: lib/katenhond_web/controllers/profile_controller.ex:60 lib/katenhond_web/controllers/session_controller.ex:64
+#: lib/katenhond_web/controllers/session_controller.ex:64
+msgid "Passwords do not match"
+msgstr "Les mots de passe ne correspondent pas"
+
+#, elixir-format
+#: lib/katenhond_web/controllers/session_controller.ex:60
+#: lib/katenhond_web/controllers/session_controller.ex:60
+msgid "Signed up successfully! Now please login!"
+msgstr "Inscription réussie! Maintenant, connectez-vous!"
+
+#, elixir-format
+#: lib/katenhond_web/controllers/session_controller.ex:68
+#: lib/katenhond_web/controllers/session_controller.ex:68
+msgid "Username already taken"
+msgstr "Nom d'utilisateur déjà pris"
+
+#, elixir-format
+#: lib/katenhond_web/controllers/profile_controller.ex:52
+#: lib/katenhond_web/controllers/profile_controller.ex:52
+msgid "Changed password successfully!"
+msgstr "Changer le mot de passe"
+
+#, elixir-format
+#: lib/katenhond_web/controllers/profile_controller.ex:56
+#: lib/katenhond_web/controllers/profile_controller.ex:56
+msgid "Old password is not correct"
+msgstr "L'ancien mot de passe n'est pas correct"
+
+#, elixir-format
+#: lib/katenhond_web/controllers/session_controller.ex:30
+#: lib/katenhond_web/controllers/session_controller.ex:30
+msgid "Invalid credentials"
+msgstr "Les informations d'identification invalides"
+
+#, elixir-format
+#: lib/katenhond_web/controllers/session_controller.ex:25
+#: lib/katenhond_web/controllers/session_controller.ex:25
+msgid "Welcome!"
+msgstr "Bienvenu!"
+
+#, elixir-format, fuzzy
+#: lib/katenhond_web/controllers/profile_controller.ex:33
+#: lib/katenhond_web/controllers/profile_controller.ex:33
+msgid "Changed username successfully"
+msgstr "Changer le nom d'utilisateur"

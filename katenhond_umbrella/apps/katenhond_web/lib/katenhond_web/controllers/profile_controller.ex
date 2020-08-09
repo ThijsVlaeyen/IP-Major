@@ -28,9 +28,9 @@ defmodule KatenhondWeb.ProfileController do
     def changeusernamepost(conn,%{"user" => %{"username" => username}}) do
         user = getUser(conn)
         case UserContext.change_username(user,username) do
-          {:ok, user} ->
+          {:ok, _user} ->
             conn
-            |> put_flash(:info, "Changed username successfully to #{user.username}!")
+            |> put_flash(:info, gettext("Changed username successfully"))
             |> redirect(to: "/profile")
           {:error, %Ecto.Changeset{} = changeset} ->
             render(conn,"editusername.html", user: user, changeset: changeset)
@@ -46,19 +46,19 @@ defmodule KatenhondWeb.ProfileController do
 
     def changepasswordpost(conn,%{"user" => %{"oldpassword" => oldpassword,"newpassword" => newpassword, "confirmnewpassword" => confirmnewpassword}}) do
         user = getUser(conn)
-        if(newpassword != confirmnewpassword) do
-          conn
-          |> put_flash(:error, "New password and confirm new password are not equal!")
-          |> render("editpassword.html", user: user, changeset: UserContext.change_user(user))
-        else 
-          case UserContext.change_password(user,oldpassword,newpassword) do
-            {:ok, _user} ->
-              conn
-              |> put_flash(:info, "Changed password successfully!")
-              |> redirect(to: "/profile")
-            {:error, %Ecto.Changeset{} = changeset} ->
-              render(conn,"editpassword.html", user: user, changeset: changeset)
-          end
+        case UserContext.change_password(user,oldpassword,newpassword, confirmnewpassword) do
+          {:ok, _user} ->
+            conn
+            |> put_flash(:info, gettext("Changed password successfully!"))
+            |> redirect(to: "/profile")
+          {:error, :invalid_credentials} ->
+            conn
+            |> put_flash(:error, gettext("Old password is not correct"))
+            |> render("editpassword.html", user: user, changeset: UserContext.change_user(user))
+          {:error, :non_matching} ->
+            conn
+            |> put_flash(:error, gettext("Passwords do not match"))
+            |> render("editpassword.html", user: user, changeset: UserContext.change_user(user))
         end
     end
 

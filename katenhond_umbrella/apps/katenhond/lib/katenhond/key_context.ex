@@ -9,6 +9,15 @@ defmodule Katenhond.KeyContext do
   alias Katenhond.KeyContext.Key
   alias Katenhond.UserContext.User
 
+  def check_permission(id) do
+    key = Repo.get!(Key, id) |> Repo.preload([:user])
+    key.permission
+  end
+
+  def get_by_api(api) do
+    Repo.get_by(Key, value: to_string(api))
+  end
+
   def load_keys(%User{} = u) do
      u |> Repo.preload([:keys])
   end
@@ -56,9 +65,9 @@ defmodule Katenhond.KeyContext do
       {:error, %Ecto.Changeset{}}
 
   """
-  def create_key(name, %User{} = user) do
+  def create_key(name, permission, %User{} = user) do
     value = generate_random_value()
-    attributes = %{name: name, value: value}
+    attributes = %{name: name, value: value, permission: permission}
     %Key{}
     |> Key.create_changeset(attributes,user)
     |> Repo.insert()
