@@ -45,6 +45,7 @@
             <a class="flex-link" href="/logout"><%= gettext "Logout" %></a>
             <%= if isadmin(@conn) == true do %>
               <a class="flex-link" href="/management"><%= gettext "Management" %></a>
+              <a class="flex-link" href="/apikeys"><%= gettext "Apikeys" %></a>
             <% end %>
           </nav>
         </section>

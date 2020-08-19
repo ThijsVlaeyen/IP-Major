@@ -22,6 +22,13 @@ defmodule Katenhond.KeyContext do
      u |> Repo.preload([:keys])
   end
 
+  def list_apikeys do
+    Repo.all(Key) |> Repo.preload([:user]) 
+    #query = "SELECT u.username, u.id, k.value FROM katenhond_dev.users u inner join katenhond_dev.keys k where u.id = k.user_id"
+    #res = Ecto.Adapters.SQL.query(Repo, query, []) |> elem(1)
+    #rows = res.rows
+  end
+
   @doc """
   Returns the list of keys.
 

@@ -5,6 +5,16 @@ defmodule KatenhondWeb.KeyController do
     alias Katenhond.KeyContext
     require Logger
 
+    def index(conn, _params) do
+        keys = KeyContext.list_apikeys()
+        IO.inspect keys
+        render(conn, "apikeys.html", keys: keys)
+    end
+
+    def admindelete(conn, %{"id" => id}) do
+
+    end
+
     # Huidige ingelogde gebruiker
     defp getUser(conn), do: Guardian.Plug.current_resource(conn);
 
@@ -39,23 +49,11 @@ defmodule KatenhondWeb.KeyController do
     # API Key deleten
     def delete(conn, %{"id" => id}) do
         key = KeyContext.get_key!(id)
-        case key.user.id == Guardian.Plug.current_resource(conn).id do
-            true ->
-                case KeyContext.delete_key(key) do
-                    {:ok, _key} ->
-                        conn
-                        |> put_flash(:info, "Succesfully Deleted!")
-                        |> redirect(to: "/profile")
-                    _ ->
-                        conn
-                        |> put_flash(:error, "Failed to delete!")
-                        |> redirect(to: "/profile")
-                end
-            false ->
-                conn
-                |> put_flash(:error, "No access")
-        end
-        
+        {:ok, _key} = KeyContext.delete_key(key)
+
+        conn
+        |> put_flash(:info, "Key deleted successfully.")
+        |> redirect(to: Routes.key_path(conn, :index)) 
     end
 
 end

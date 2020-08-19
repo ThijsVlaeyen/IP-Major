@@ -23,4 +23,8 @@ defmodule KatenhondWeb.PageController do
         redirect(conn, to: "/users")
     end
 
+    def apikeys(conn, _params) do
+        redirect(conn, to: "/admin/apikeys/overview")
+    end
+
 end

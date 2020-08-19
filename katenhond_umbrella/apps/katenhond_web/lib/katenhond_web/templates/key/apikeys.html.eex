@@ -1,0 +1,19 @@
+<h1><%= gettext "Management" %></h1>
+<table>
+  <thead>
+    <tr>
+      <th><%= gettext "Username" %></th>
+      <th><%= gettext "Apikey" %></th>
+      <th><%= gettext "Actions" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= for key <- @keys do %>
+    <tr>
+      <td><%= key.user.username %></td>
+      <td><%= key.value%></td>
+      <td><span><%= link( "Delete", to: Routes.key_path(@conn, :delete, key), method: :delete, data: [confirm: "Are you sure?"]) %></span></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

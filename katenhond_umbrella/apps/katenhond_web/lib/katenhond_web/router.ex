@@ -86,6 +86,8 @@ defmodule KatenhondWeb.Router do
     get "/management", PageController, :management
     resources "/users", UserController
 
+    get "/apikeys", PageController, :apikeys
+    resources "/admin/apikeys/overview", KeyController
   end
 
   # API
@@ -110,7 +112,6 @@ defmodule KatenhondWeb.Router do
       put "/animals/:id", AnimalController, :update
       delete "/animals/:id", AnimalController, :delete
     end
-
    end
 
 end
